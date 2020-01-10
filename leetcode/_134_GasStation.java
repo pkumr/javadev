@@ -12,6 +12,6 @@ public class _134_GasStation {
 				visited = 0;
 			}
 		}
-		return canbeCompleted >= 0 startingIndex : -1;
+		return canbeCompleted >= 0? startingIndex : -1;
 	}
 }
