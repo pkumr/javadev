@@ -4,7 +4,7 @@ public class _31_NextPermutation{
 		while(i>=0 && nums[i + 1] <= nums[i]){
 			i--;
 		}
-		if(i > 0){
+		if(i >= 0){
 			int j = nums.length - 1;
 			while(j >= 0 && nums[j] <= nums[i]){
 				j--;
