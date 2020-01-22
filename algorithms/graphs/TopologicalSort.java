@@ -64,7 +64,7 @@ public class TopologicalSort {
         }
         if(output.size() == numberOfVertices)
            for(int out : output)
-                System.out.println(out + "-->");
+                System.out.print(out + "-->");
         else
             System.out.println("Graph has cycles");
         
@@ -80,7 +80,13 @@ public class TopologicalSort {
                3
         
         It should Print -->
-        
+        0-->2-->5-->4-->3-->6-->1-->
+        1 should be completed before 6 starts
+        3 should be completed before 4 starts
+        6 should be completed before 4 starts
+        4 should be completed before 5 starts
+        6 should be completed before 2 starts
+        2 and 5 should be completed befor 0 starts.
         */
         
         obj.addEdge(6, 1);
