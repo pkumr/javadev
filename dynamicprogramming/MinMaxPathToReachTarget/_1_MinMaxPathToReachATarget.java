@@ -17,9 +17,10 @@ public class _1_MinMaxPathToReachATarget{
 		for (int i = 1; i <= target; ++i) {
 			for (int j = 0; j < ways.size(); ++j) {
 				if (ways[j] <= i) {
-					dp[i] = min(dp[i], dp[i - ways[j]])// + cost / path / sum;
+					dp[i] = min(dp[i], dp[i - ways[j]]);// + cost / path / sum;
 				}
 			}
 		}
+		return dp[target];
 	}
 }
