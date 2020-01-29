@@ -9,6 +9,7 @@ package com.pk.algorithms.trees;
  */
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Stack;
 
 public class BinaryTreeInOrderTraversal {
      //Definition of Binary Tree Node
@@ -36,5 +37,23 @@ public class BinaryTreeInOrderTraversal {
                 helperRecursive(result, root.right);
             }
         }
+    }
+    
+    //Method#2 - Interative Approach
+    //Stack is used in this approach
+    public List<Integer> inOrderTraversalIterative(TreeNode root){
+        List<Integer> result = new ArrayList<>();
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode curr = root;
+        while(curr != null || !stack.isEmpty()){
+            while(curr != null){
+                stack.push(curr);
+                curr = curr.left;
+            }
+            curr = stack.pop();
+            result.add(curr.val);
+            curr = curr.right;
+        }
+        return result;
     }
 }
