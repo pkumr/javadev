@@ -6,6 +6,12 @@ package com.pk.algorithms.trees;
 /**
  *
  * @author parveenkumar
+ * 
+ * Tree Traversals
+ * 1. PreOrder --> root --> left --> right
+ * 2. InOrder --> left --> root --> right
+ * 3. PostOrder --> left --> right --> root
+ * 
  */
 import java.util.List;
 import java.util.ArrayList;
