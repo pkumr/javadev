@@ -12,10 +12,40 @@ package com.pk.algorithms.dynamicprogramming;
  */
 public class LongestPalindromeSubstring {
     //Driver
-    public static void main_LPS(String[] args){
-        String input = "cbbd";
+    public static void main(String[] args){
+        String input = "banana";
         System.out.println(new LongestPalindromeSubstring().longestPalindrome(input));
+        //System.out.println(new LongestPalindromeSubstring().longestPalindromeBruteForce(input));
     }
+    //Approach#1 - BruteForce Approach
+    public boolean isPalindrome(String s, int i, int j){
+        while(j > i){
+            if(s.charAt(i) != s.charAt(j)){
+                return false;
+            }
+            i++;
+            j--;
+        }
+        return true;
+    }
+    //Time Limit Exceeded Error for very long string input
+    public String longestPalindromeBruteForce(String s){
+        int startIndx = 0;
+        int maxLen = 1;
+        for(int i = 0; i < s.length(); i++){
+            for(int j = i + 1; j < s.length(); j++){
+                if(isPalindrome(s, i, j)){
+                    if(j - i + 1 > maxLen){
+                        maxLen = j - i + 1;
+                        startIndx = i;
+                    }
+                }
+            }
+        }
+        return s.substring(startIndx, startIndx + maxLen);
+    }
+    
+    //Approach#2 - Dynamic Programming
     public String longestPalindrome(String s){
         if(s == null || s.length() < 1)
             return "";
@@ -28,8 +58,8 @@ public class LongestPalindromeSubstring {
         }
         for(int start = s.length()-1; start >= 0 ; start--){
             for (int end = start + 1; end < s.length(); end++){
-                 System.out.println(start);
-                 System.out.println(end);
+                 //System.out.println(start);
+                 //System.out.println(end);
                 if(s.charAt(start) == s.charAt(end)){
                     //If input is two character string or
                     // if the remaining string is palindrome
