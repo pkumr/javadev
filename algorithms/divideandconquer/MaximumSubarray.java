@@ -15,7 +15,7 @@ package com.pk.algorithms.divideandconquer;
  * @author parveenkumar
  */
 public class MaximumSubarray {
-    public static void main(String[] args){
+    public static void main_mss(String[] args){
         int[] nums = {-2,1,-3,4,-1,2,1,-5,4};
         System.out.println(new MaximumSubarray().maxSubArrayDAC(nums));
         System.out.println(new MaximumSubarray().maxSubArrayGreedy(nums));
@@ -57,7 +57,7 @@ public class MaximumSubarray {
     }
     //#Approach 2: Greedy
     public int maxSubArrayGreedy(int[] nums){
-        int n = nums.length;
+        //int n = nums.length;
         int currSum = nums[0];
         int maxSum = nums[0];
         
@@ -66,6 +66,17 @@ public class MaximumSubarray {
             System.out.print( i + " Current Sum - " + currSum);
             maxSum = Math.max(maxSum, currSum);
             System.out.println(" Max Sum - " + maxSum);
+        }
+        return maxSum;
+    }
+    //Approach 3: Dynamic Programming
+    public int maxSubArrayDP(int[] nums){
+        int n = nums.length;
+        int maxSum = nums[0];
+        for(int i = 0; i < n; i++){
+            if(nums[i - 1] > 0)
+                nums[i] += nums[i - 1];
+            maxSum = Math.max(nums[i], maxSum);
         }
         return maxSum;
     }
