@@ -17,11 +17,12 @@ package com.pk.algorithms.divideandconquer;
 public class MaximumSubarray {
     public static void main(String[] args){
         int[] nums = {-2,1,-3,4,-1,2,1,-5,4};
-        System.out.println(new MaximumSubarray().maxSubArray(nums));
+        System.out.println(new MaximumSubarray().maxSubArrayDAC(nums));
+        System.out.println(new MaximumSubarray().maxSubArrayGreedy(nums));
     }
     
     //Approach 1: Divide and Conquer
-    public int maxSubArray(int[] nums){
+    public int maxSubArrayDAC(int[] nums){
         return helper(nums, 0, nums.length - 1);
     }
     private int helper(int[] nums, int left, int right){
@@ -53,5 +54,19 @@ public class MaximumSubarray {
             rightSubSum = Math.max(rightSubSum, currSum);
         }
         return leftSubSum + rightSubSum;
+    }
+    //#Approach 2: Greedy
+    public int maxSubArrayGreedy(int[] nums){
+        int n = nums.length;
+        int currSum = nums[0];
+        int maxSum = nums[0];
+        
+        for(int i = 0; i < nums.length; i++){
+            currSum = Math.max(nums[i], currSum + nums[i]);
+            System.out.print( i + " Current Sum - " + currSum);
+            maxSum = Math.max(maxSum, currSum);
+            System.out.println(" Max Sum - " + maxSum);
+        }
+        return maxSum;
     }
 }
