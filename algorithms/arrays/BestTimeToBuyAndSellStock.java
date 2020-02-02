@@ -24,9 +24,11 @@ public class BestTimeToBuyAndSellStock {
     Not 7-1 = 6, as selling price needs to be larger than buying price.
     
     */
-    public static void main(String[] args){
+    public static void main_stocks(String[] args){
         int[] input = {7, 1, 5, 3, 6, 4};
-        System.out.println(new BestTimeToBuyAndSellStock().maxProfitBruteForce(input));
+        System.out.println("Brute Force - " + new BestTimeToBuyAndSellStock().maxProfitBruteForce(input));
+        int out = new BestTimeToBuyAndSellStock().maxProfitOnePass(input);
+        System.out.println("One Pass - " + out);
     }
     //Approach#1 - BruteForce
     public int maxProfitBruteForce(int[] prices){
@@ -37,6 +39,22 @@ public class BestTimeToBuyAndSellStock {
                 if(profit > maxProfit){
                     maxProfit = profit;
                 }
+            }
+        }
+        return maxProfit;
+    }
+    
+    //Approach#2 - One Pass
+    public int maxProfitOnePass(int[] prices){
+        int minPrice = Integer.MAX_VALUE;
+        int maxProfit = 0;
+        for(int i = 0; i < prices.length; i++){
+            if(prices[i] < minPrice){
+                minPrice = prices[i];
+                //System.out.println(i +  " Min Prices - " + minPrice);
+            }else if (prices[i] - minPrice > maxProfit){
+                maxProfit = prices[i] - minPrice;
+                //System.out.println(i + " Max Profit - " + maxProfit);
             }
         }
         return maxProfit;
