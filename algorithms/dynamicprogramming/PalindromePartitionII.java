@@ -1,7 +1,19 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Reference - Leetcode
+ * 132. Palindrome Partitioning II
+ * 
+ * Given a string s, partition s such that every 
+ * substring of the partition is a palindrome.
+ * 
+ * Return the minimum cuts needed for a palindrome partitioning of s.
+ * 
+ * Example:
+ * 
+ * Input: "aab"
+ * Output: 1
+ * Explanation: The palindrome partitioning ["aa","b"] 
+ * could be produced using 1 cut. 
+ *
  */
 package com.pk.algorithms.dynamicprogramming;
 
