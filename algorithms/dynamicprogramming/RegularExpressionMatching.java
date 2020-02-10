@@ -50,5 +50,28 @@ public class RegularExpressionMatching {
         return firstMatch && isMatchSimple(text.substring(1), pattern.substring(1));
 
     }
-    
+    //Recursion with Star (*) and Dot (.)
+    private boolean isMatchRecursion(String text, String pattern) {
+        if (pattern.isEmpty())
+            return text.isEmpty();
+        boolean fistMatch = (!text.isEmpty() &&
+                (pattern.charAt(0) == text.charAt(0) ||
+                pattern.charAt(0) == '.'));
+        //First thing to note is (*) works with preceding element.
+        //So pattern should be of minimum length of 2 and * can be at second position charAt(1)
+        //Return based on two cases
+        //1. first recursive is with actual text and dropping two initial characters of pattern.
+        //      here as * starts from 2nd position so dropping letter and *
+        //2. drop one character in text and call recursive and tie this with first match result.
+        //      here if we have repeating character and * matches with them
+        //      so we are dropping one character in text
+        if (pattern.length() >= 2 && pattern.charAt(1) == '*') {
+            return (isMatchRecursion(text, pattern.substring(2)) ||
+                    (fistMatch && isMatchRecursion(text.substring(1), pattern)));
+        }
+        //this is similar whe we dont have * in pattern
+        else {
+            return fistMatch && isMatchRecursion(text.substring(1), pattern.substring(1));
+        }
+    }
 }
