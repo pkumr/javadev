@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * 
  */
 package com.pk.algorithms.backtracking;
 
@@ -27,5 +25,5 @@ public class Combinations {
             backtrack(list,templist,n,k,i+1);
             templist.remove(templist.size()-1);
         }
-}
+    }
 }
