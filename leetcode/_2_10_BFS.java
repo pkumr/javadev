@@ -19,4 +19,94 @@ package com.breadthfirst;
  * */
 
 public class _2_10_BFS {
+    public static void main(String[] args){
+        char[][] island  = {
+                {'1', '1', '0', '0', '0'},
+                {'1', '1', '0', '0', '0'},
+                {'0', '0', '1', '0', '0'},
+                {'0', '0', '0', '1', '1'}
+        };
+        _2_10_BFS obj = new _2_10_BFS();
+        int numIslandsDFS = obj.numIslandsDFS(island);
+        System.out.println("No of Islands DFS :- " + numIslandsDFS);
+    }
+    /*
+    * LC# 200
+    * Given a 2d grid map of '1's (land) and '0's (water), count the number of islands.
+    *
+    * An island is surrounded by water and is formed by connecting adjacent lands
+    * horizontally or vertically.
+    * You may assume all four edges of the grid are all surrounded by water.
+    *
+    * Example: 1
+    *
+    *   Input:
+    *   11110
+    *   11010
+    *   11000
+    *   00000
+    *
+    *   Output : 1
+    *
+    * Example: 2
+    *
+    *   Input:
+    *   11000
+    *   11000
+    *   00100
+    *   00011
+    *
+    *   Output: 3
+    *
+    * */
+    /*
+    * Approach# 1 Depth First Search (DFS)
+    * Treat the 2d grid map as an undirected graph and there is an edge between two
+    * horizontally or vertically adjacent nodes of value '1'.
+    *
+    * Method/Algorithm - Linear scan the 2d grid map, if a node contains a '1', then
+    * it is a root node that triggers a Depth First Search. During DFS, every visited
+    * node should be set as '0' to mark as visited node. Count the number of root nodes
+    * that triggers DFS, this number would be the number of islands since each DFS starting
+    * at some root identifies an island.
+    *
+    * */
+    private int numIslandsDFS(char[][] grid){
+        if(grid == null || grid.length == 0)
+            return 0;
+        int numOfIslands = 0;
+        for(int i = 0; i < grid.length; i++){
+            for(int j = 0; j < grid[i].length; j++){
+                //if we find value 1 - start DFS to find all 1's vertically and horizontally.
+                if(grid[i][j] == '1'){
+                    System.out.println("i :- " + i + " j :- " + j );
+                    numOfIslands += dfs(grid, i, j);
+                }
+            }
+        }
+        return numOfIslands;
+    }
+    private int dfs(char[][] grid, int i, int j){
+        // i < 0 --> row number goes negative
+        // i > grid.length --> row number goes beyond grid rows
+        // j < 0 --> column number goes negative
+        // j > grid[i].length --> column number in a row goes negative
+        if (i < 0 || i >= grid.length || j < 0 || j >= grid[i].length || grid[i][j] == '0'){
+            return 0;
+        }
+        //mark node in grid as visited
+        //Once we mark node as visited (==0) in grid, the for loop
+        //in main calling function should skip visited nodes. (check done)
+        grid[i][j] = '0';
+        dfs(grid, i + 1, j); //--> down
+        dfs(grid, i - 1, j); //--> up
+        dfs(grid, i, j + 1); //--> right
+        dfs(grid, i, j - 1); //--> left
+        return 1;
+    }
+    /*
+    * Time Complexity   : O(M x N) where M is number of rows and N is number of columns.
+    * Space Complexity  : worst case O(M x N) in case that grid is filled with lands where
+    *                     DFS goes by M x N deep.
+    * */
 }
