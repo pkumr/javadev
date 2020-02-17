@@ -17,10 +17,11 @@ package com.depthfirst;
  * 14. Flood Fill (LC# 733) E
  *
  * */
-import apple.laf.JRSUIUtils;
-import com.sun.deploy.panel.ITreeNode;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
+
 public class _2_10_DFS {
     /*
     * Tree Definition
@@ -52,6 +53,7 @@ public class _2_10_DFS {
         _2_10_DFS obj = new _2_10_DFS();
         int depth_recursion = obj.maxDepthRecursionDFS(one);
         int depth_iterative = obj.maxDepthIterativeStack(one);
+        int depth_bfs = obj.maxDepthBFS(one);
         System.out.println("Max Depth Recursion -> " + depth_recursion);
         System.out.println("Max Depth Iterative -> " + depth_iterative);
     }
@@ -152,6 +154,33 @@ public class _2_10_DFS {
                 stack.add(node.right);
                 depths.add(current_depth + 1);
             }
+        }
+        return depth;
+    }
+    /*
+    * Approach# 3 : Breath First Search
+    *
+    * */
+    private int maxDepthBFS(TreeNode root){
+        if(root == null)
+            return 0;
+
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        int depth = 0;
+        while (!queue.isEmpty()){
+            int size = queue.size();
+            while (size-- > 0){
+                TreeNode node = queue.poll();
+                //System.out.println("BFS Track :- " + node.val);
+                if(node.left != null){
+                    queue.offer(node.left);
+                }
+                if(node.right != null){
+                    queue.offer(node.right);
+                }
+            }
+            depth++;
         }
         return depth;
     }
