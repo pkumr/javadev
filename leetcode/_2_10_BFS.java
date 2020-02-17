@@ -18,6 +18,9 @@ package com.breadthfirst;
  *
  * */
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class _2_10_BFS {
     public static void main(String[] args){
         char[][] island  = {
@@ -27,8 +30,10 @@ public class _2_10_BFS {
                 {'0', '0', '0', '1', '1'}
         };
         _2_10_BFS obj = new _2_10_BFS();
-        int numIslandsDFS = obj.numIslandsDFS(island);
-        System.out.println("No of Islands DFS :- " + numIslandsDFS);
+        //int numIslandsDFS = obj.numIslandsDFS(island);
+        int numIslandsBFS = obj.numIslandsBFS(island);
+        System.out.println("No of Islands BFS :- "+ numIslandsBFS);
+        //System.out.println("No of Islands DFS :- " + numIslandsDFS);
     }
     /*
     * LC# 200
@@ -109,4 +114,37 @@ public class _2_10_BFS {
     * Space Complexity  : worst case O(M x N) in case that grid is filled with lands where
     *                     DFS goes by M x N deep.
     * */
+
+    /*
+    * Approach# 2 Breadth First Search
+    *
+    * */
+    private int numIslandsBFS(char[][] grid){
+        if(grid == null || grid.length == 0)
+            return 0;
+        int[] shift = new int[] {0, 1, 0, -1, 0};
+        int numOfIslands = 0;
+        for(int i = 0; i < grid.length; i++){
+            for(int j = 0; j < grid[0].length; j++){
+                if(grid[i][j] == '1'){
+                    numOfIslands++;
+                    grid[i][j] = '0';
+                    Queue<int[]> queue = new LinkedList<>();
+                    queue.offer(new int[] {i, j});
+                    while (!queue.isEmpty()){
+                        int[] current = queue.poll();
+                        for(int k = 0; k < 4; k++){
+                            int x = current[0] + shift[k];
+                            int y = current[1] + shift[k + 1];
+                            if(x >= 0 && x < grid.length && y >= 0 && y < grid[0].length && grid[x][y] == '1'){
+                                grid[x][y] = '0';
+                                queue.offer(new int[]{x, y});
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return numOfIslands;
+    }
 }
