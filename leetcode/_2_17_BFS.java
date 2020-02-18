@@ -17,16 +17,20 @@ package com.breadthfirst;
 * 14. Snakes and Ladders (LC# 909) M
 *
 * */
+import java.util.Stack;
 public class _2_17_BFS {
     public static void main(String[] args){
         int[] trapRainInput = {0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1};
         _2_17_BFS obj = new _2_17_BFS();
         int outRain = obj.trapRainWaterBruteForce(trapRainInput);
-        System.out.println("Trapped Water : - "+ outRain);
+        //System.out.println("Trapped Water : - "+ outRain);
+        //System.out.println(obj.trapRainWaterDP(trapRainInput));
+        //System.out.println(obj.trapRainWaterStack(trapRainInput));
+        System.out.println(obj.trapRainWaterTwoPointers(trapRainInput));
 
     }
     /*
-    * LC# 42
+    * LC# 42 - Hard Problem
     * Given n non-negative integers representing an elevation map where the width
     * of each bar is 1, compute how much water it is able to trap after raining.
     *
@@ -169,7 +173,120 @@ public class _2_17_BFS {
             }
             //System.out.println("Max Left " + max_left + " Max Right " + max_right);
             ans += Math.min(max_left, max_right) - height[i];
-            System.out.println(ans);
+            //System.out.println(ans);
+        }
+        return ans;
+    }
+    /*
+    * Time complexity   : O(N Square). For each element of array, we iterate the left and right parts.
+    * Space Complexity  : O(1)
+    * */
+    /*
+    * Approach# 2 - Dynamic Programming
+    *
+    * In Brute force, we iterate over the left and right parts again and again
+    * just to find the highest bar size up to that index.
+    * But this could be stored using Dynamic Programming.
+    *
+    * Algorithm :
+    *   - Find maximum height of bar from the left end up to an index i in the array left_max.
+    *   - Find maximum height of bar from the right end up to an index i in the array right_max.
+    *   - Iterate over the height array and update ans :
+    *       o  Add min(left_max[i], right_max[i]) - height[i] to ans
+    * */
+    private int trapRainWaterDP(int[] height){
+        int ans = 0;
+        int[] left_max = new int[height.length];
+        int[] right_max = new int[height.length];
+        left_max[0] = height[0];
+        right_max[height.length - 1] = height[height.length - 1];
+        for(int i = 1; i < height.length - 1; i++){
+            left_max[i] = Math.max(height[i], left_max[i - 1]);
+        }
+        for(int i = height.length - 2; i >= 0; i--){
+            right_max[i] = Math.max(height[i], right_max[i + 1]);
+        }
+        for(int i = 1; i < height.length - 1; i++){
+            ans += Math.min(left_max[i], right_max[i]) - height[i];
+        }
+        return ans;
+    }
+
+    /*
+    * Approach# 3 - Using Stacks
+    * Instead of storing the largest bar up to an index, we can use stack to keep track of the bars
+    * that are bounded by longer bars and hence, may store water. Using the stack, we can do the
+    * calculations in only one iteration.
+    *
+    * We keep a stack and iterate over the array. We add the index of the bar to the stack if bar is
+    * smaller than or equal to the bar at top of stack, which means that the current bar is bounded
+    * by the previous bar in the stack. if we found a bar longer than that at the top, we are sure
+    * that the bar at the top of the stack is bounded by the current bar and a previous bar in the
+    * stack, hence, we can pop it and add resulting trapped water into ans.
+    *
+    * Algorithm
+    *
+    * */
+    private int trapRainWaterStack(int[] height){
+        Stack<Integer> stack = new Stack<>();
+        int water = 0, i = 0;
+        while (i < height.length) {
+            if (stack.isEmpty() || height[i] <= height[stack.peek()]) {
+                stack.push(i++);
+            } else {
+                int pre = stack.pop();
+                if (!stack.isEmpty()) {
+                    // find the smaller height between the two sides
+                    int minHeight = Math.min(height[stack.peek()], height[i]);
+                    // calculate the area
+                    water += (minHeight - height[pre]) * (i - stack.peek() - 1);
+                }
+            }
+        }
+        return water;
+    }
+    /*
+    * Approach # 4 Two Pointers
+    *
+    *
+    * */
+    private int trapRainWaterTwoPointers(int[] height){
+        int ans = 0;
+        int left = 0;
+        int right = height.length - 1;
+        int left_max = 0, right_max = 0;
+        while (left < right){
+            if(height[left] < height[right]){
+                System.out.println("Enter If (height_left < height_right)");
+                System.out.println("height[left] :- " + height[left]);
+                System.out.println("height[right] :- " + height[right]);
+                System.out.println("left_max :- " + left_max);
+                if(height[left] >= left_max){
+                    left_max = height[left];
+                    System.out.println("1. Assigned new left_max :- " + left_max);
+                }else {
+                    ans += left_max - height[left];
+                    System.out.println("2. ans updated :- " + ans);
+                }
+                //height[left] >= left_max ? (left_max = height[left]) : ans += (left_max - height[left]);
+                left++;
+                System.out.println();
+            }else {
+                //height[left] >= height[right]
+                System.out.println("Enter Else (height_left >= height_right)");
+                System.out.println("height[right] :- " + height[right]);
+                System.out.println("height[left] :- " + height[left]);
+                System.out.println("right_max :- " + right_max);
+                if(height[right] >= right_max){
+                    right_max = height[right];
+                    System.out.println("1. Assigned new right_max :- " + right_max);
+                }else {
+                    ans += right_max - height[right];
+                    System.out.println("2. ans updated :- " + ans);
+                }
+                right--;
+                System.out.println();
+            }
         }
         return ans;
     }
