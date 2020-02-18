@@ -17,6 +17,8 @@ package com.breadthfirst;
 * 14. Snakes and Ladders (LC# 909) M
 *
 * */
+import java.util.Comparator;
+import java.util.PriorityQueue;
 import java.util.Stack;
 public class _2_17_BFS {
     public static void main(String[] args){
@@ -26,8 +28,14 @@ public class _2_17_BFS {
         //System.out.println("Trapped Water : - "+ outRain);
         //System.out.println(obj.trapRainWaterDP(trapRainInput));
         //System.out.println(obj.trapRainWaterStack(trapRainInput));
-        System.out.println(obj.trapRainWaterTwoPointers(trapRainInput));
+        //System.out.println(obj.trapRainWaterTwoPointers(trapRainInput));
 
+        int[][] trapRain2 = {
+                {1,4,3,1,3,2},
+                {3,2,1,3,2,4},
+                {2,3,3,2,3,1}
+        };
+        System.out.println(obj.trapRainWater(trapRain2));
     }
     /*
     * LC# 42 - Hard Problem
@@ -289,5 +297,122 @@ public class _2_17_BFS {
             }
         }
         return ans;
+    }
+
+    /*
+    * LC# 407
+    * Given an m x n matrix of positive integers representing the height of each unit
+    * cell in a 2D elevation map, compute the volume of water it is able to trap after
+    * raining.
+    *
+    * Note : Both m and n are less than 110. the height of each unit cell is greater than
+    *       0 and less than 20,000.
+    *
+    * Example:
+    *   Given the following 3x6 height map:
+    *       [
+    *           [1,4,3,1,3,2],
+    *           [3,2,1,3,2,4],
+    *           [2,3,3,2,3,1]
+    *       ]
+    *
+    *   Return 4.
+    * */
+    /*
+    * Approach# 1
+    * BFS and Priority Queue with heights in array
+    *
+    * */
+    private int trapRainWater(int[][] heightMap){
+        int[] shift = new int[] {0, 1, 0, -1, 0};
+        int row = heightMap.length;
+        int col = heightMap[0].length;
+        int result = 0;
+        PriorityQueue<int[]> priorityQueue = new PriorityQueue<>(
+                (a, b) -> a[2] - b[2]
+        );
+        boolean[][] visited = new boolean[row][col];
+        for(int i = 0; i < row; i++){
+            priorityQueue.offer(new int[]{i, 0, heightMap[i][0]});
+            priorityQueue.offer(new int[]{i, col - 1, heightMap[i][col - 1]});
+            visited[i][0] = visited[i][col - 1] = true;
+        }
+
+        for(int j = 1; j < col - 1; j++){
+            priorityQueue.offer(new int[]{0, j, heightMap[0][j] });
+            priorityQueue.offer(new int[]{row - 1, j, heightMap[row - 1][j]});
+            visited[0][j] =  visited[row - 1][j] = true;
+        }
+
+        while (!priorityQueue.isEmpty()){
+            int[] current = priorityQueue.poll();
+            for(int k = 0; k < 4; k++){
+                int x = current[0] + shift[k];
+                int y = current[1] + shift[k + 1];
+                if(x < 0 || x >= row || y < 0 || y >= col ||visited[x][y]) continue;
+                result += Math.max(0, current[2] - heightMap[x][y]);
+                priorityQueue.offer(new int[]{x, y, Math.max(heightMap[x][y], current[2])});
+                visited[x][y] = true;
+            }
+        }
+        return result;
+    }
+    /*
+    * Approach# 2
+    * BFS and Priority Queue with Blocks in different Class
+    *
+    * */
+    public static class Block{
+        int row;
+        int col;
+        int height;
+        public Block(int r, int c, int h){
+            this.row = r;
+            this.col = c;
+            this.height = h;
+        }
+    }
+    private int trapRainWater_2(int[][] heightMap){
+        if(heightMap == null || heightMap.length == 0  || heightMap[0].length == 0)
+            return 0;
+
+        int result = 0;
+        int[] shift = new int[] {0, 1, 0, -1, 0};
+        //Priority Queue Based on heights of blocks
+        PriorityQueue<Block> priorityQueue = new PriorityQueue<>(
+                1, new Comparator<Block>() {
+            @Override
+            public int compare(Block a, Block b) {
+                return a.height - b.height;
+            }
+        });
+
+        int m = heightMap.length;
+        int n = heightMap[0].length;
+        boolean[][] visited = new boolean[m][n];
+        for(int i = 0; i < m; i++){
+            priorityQueue.offer(new Block(i, 0, heightMap[i][0]));
+            priorityQueue.offer(new Block(i, n - 1, heightMap[i][n - 1]));
+            visited[i][0] = true;
+            visited[i][n - 1] = true;
+        }
+        for(int j = 0; j < n; j++){
+            priorityQueue.offer(new Block(0, j, heightMap[0][j]));
+            priorityQueue.offer(new Block(m - 1, j, heightMap[m - 1][j]));
+            visited[0][j] = visited[m - 1][j] = true;
+        }
+        while (!priorityQueue.isEmpty()){
+            Block current = priorityQueue.poll();
+            for(int k = 0; k < 4; k++){
+                int x = current.row + shift[k];
+                int y = current.col + shift[k + 1];
+                if(x >= 0 && x < m && y >= 0 && y < n && !visited[x][y]){
+                    result += Math.max(0,current.height - heightMap[x][y]);
+                    visited[x][y] = true;
+                    priorityQueue.offer(new Block(x, y, Math.max(heightMap[x][y], current.height)));
+                }
+            }
+        }
+        return result;
     }
 }

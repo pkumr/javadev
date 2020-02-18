@@ -18,9 +18,13 @@ package com.breadthfirst;
  *
  * */
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
-
+import java.util.List;
+import java.util.Set;
+import java.util.HashMap;
+import java.util.HashSet;
 public class _2_10_BFS {
     public static void main(String[] args){
         char[][] island  = {
@@ -146,5 +150,109 @@ public class _2_10_BFS {
             }
         }
         return numOfIslands;
+    }
+
+    /*
+    * LC# 301
+    * Remove the minimum number of invalid parentheses in order to make the input string valid.
+    * Return all possible results.
+    * Note : The input string may contain letters other than the parentheses ( and ).
+    *
+    * Example# 1
+    *   Input: "()())()"
+    *   Output: ["()()()", "(())()"]
+    *
+    * Example# 2
+    *
+    * Input: "(a)())()"
+    * Output: ["(a)()()", "(a())()"]
+    *
+    * */
+    /*
+    * Approach# 1
+    *
+    * Breadth-First-Search
+    *
+    * */
+    private List<String> removeInvalidParenthesesBFS(String s){
+        List<String> res = new ArrayList<>();
+        if (s == null){
+            return res;
+        }
+        Queue<String> queue = new LinkedList<>();
+        Set<String> visited = new HashSet<>();
+        queue.offer(s);
+        visited.add(s);
+        boolean found = false;
+        while(!queue.isEmpty() && !found){
+            int size = queue.size();
+            for (int j = 0; j < size; j++){
+                String curr = queue.poll();
+                if (isValid(curr)){
+                    res.add(curr);
+                    found = true;
+                }
+                if (!found){
+                    for (int i = 0; i < curr.length(); i++){
+                        char c = curr.charAt(i);
+                        if (Character.isLetter(c)){
+                            continue;
+                        }
+                        String str = curr.substring(0, i) + curr.substring(i+1);
+                        if (!visited.contains(str)){
+                            queue.offer(str);
+                            visited.add(str);
+                        }
+                    }
+                }
+            }
+        }
+        return res;
+    }
+    private boolean isValid(String s){
+        int count = 0;
+
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (c == '(') count++;
+            if (c == ')') {
+                if (count == 0) return false;
+                count--;
+            }
+        }
+        return count == 0;
+    }
+
+    /*
+    * Approach# 2
+    *
+    * Depth-First-Search
+    *
+    * */
+    public List<String> removeInvalidParenthesesDFS(String s){
+        List<String> output = new ArrayList<>();
+        removeInvalidParenthesesHelper(s, output, 0, 0, '(', ')');
+        return output;
+    }
+    private void removeInvalidParenthesesHelper(String s, List<String> output, int iStart, int jStart,char openP, char closeP ){
+        int numOpenParen = 0;
+        int numClosesParen = 0;
+        for(int i = iStart; i < s.length(); i++){
+            if(s.charAt(i) == openP) numOpenParen++;
+            if(s.charAt(i) == closeP) numClosesParen++;
+            if(numClosesParen > numOpenParen) {
+                for (int j = jStart; j <= i; j++) {
+                    if(s.charAt(j) == closeP && (j == jStart || s.charAt(j - 1) != closeP))
+                        removeInvalidParenthesesHelper(s.substring(0, j) + s.substring(j + 1, s.length()),
+                                output, i, j, openP, closeP);
+                }
+                return;
+            }
+        }
+        String reversed = new StringBuilder(s).reverse().toString();
+        if(openP == '(')
+            removeInvalidParenthesesHelper(reversed,output, 0, 0, ')', '(');
+        else
+            output.add(reversed);
     }
 }
