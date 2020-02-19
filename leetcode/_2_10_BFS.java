@@ -38,6 +38,12 @@ public class _2_10_BFS {
         int numIslandsBFS = obj.numIslandsBFS(island);
         System.out.println("No of Islands BFS :- "+ numIslandsBFS);
         //System.out.println("No of Islands DFS :- " + numIslandsDFS);
+
+        List<String> res = new ArrayList<>();
+        String input = "()())()";
+        res = obj.removeInvalidParenthesesDFS2(input);
+
+
     }
     /*
     * LC# 200
@@ -255,4 +261,44 @@ public class _2_10_BFS {
         else
             output.add(reversed);
     }
+
+    /*
+    * Approach# 2 - 1
+    *
+    * Depth-First-Search
+    * (without return)
+    *
+    * */
+    public List<String> removeInvalidParenthesesDFS2(String s){
+        List<String> result = new ArrayList<>();
+        char[] check = new char[] {'(', ')'};
+        removeInvalidParenthesesDFS2Helper(s, result, check, 0, 0);
+        return result;
+    }
+    private void removeInvalidParenthesesDFS2Helper(String s, List<String> result, char[] check, int last_i, int last_j ){
+        int count = 0;
+        int i = last_i;
+        while (i < s.length() && count >= 0){
+            if(s.charAt(i) == check[0]) count++;
+            if(s.charAt(i) == check[1]) count--;
+            i++;
+        }
+        if(count >= 0){
+            //no extra ')' is detected. We now have to detect extra '(' by reversing the string.
+            System.out.println("Before Reversed :- " + s);
+            String reversed = new StringBuilder(s).reverse().toString();
+            System.out.println("Reversed :- " + reversed);
+            if(check[0] == '(')
+                removeInvalidParenthesesDFS2Helper(reversed, result, new char[]{')', '('},0, 0);
+            else result.add(reversed);
+        }else {
+            i -= 1;
+            for(int j = last_j; j <= i; j++){
+                if (s.charAt(j) == check[1] && (j == last_j || s.charAt(j-1) != check[1])) {
+                    removeInvalidParenthesesDFS2Helper(s.substring(0, j) + s.substring(j+1, s.length()), result, check, i, j);
+                }
+            }
+        }
+    }
+
 }
