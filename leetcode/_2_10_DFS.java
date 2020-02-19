@@ -164,13 +164,12 @@ public class _2_10_DFS {
     private int maxDepthBFS(TreeNode root){
         if(root == null)
             return 0;
-
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
         int depth = 0;
         while (!queue.isEmpty()){
             int size = queue.size();
-            while (size-- > 0){
+            for(int i = 0; i < size; i++){
                 TreeNode node = queue.poll();
                 //System.out.println("BFS Track :- " + node.val);
                 if(node.left != null){
