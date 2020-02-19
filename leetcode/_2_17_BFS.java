@@ -17,10 +17,22 @@ package com.breadthfirst;
 * 14. Snakes and Ladders (LC# 909) M
 *
 * */
-import java.util.Comparator;
-import java.util.PriorityQueue;
-import java.util.Stack;
+
+import java.util.*;
+
 public class _2_17_BFS {
+    /*
+     * Tree Definition
+     * Definition of TreeNode in Java
+     * */
+    public static class TreeNode{
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode(int x){
+            this.val = x;
+        }
+    }
     public static void main(String[] args){
         int[] trapRainInput = {0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1};
         _2_17_BFS obj = new _2_17_BFS();
@@ -414,5 +426,74 @@ public class _2_17_BFS {
             }
         }
         return result;
+    }
+    /*
+    * LC# 111 (Easy)
+    * (Similar Problem for maximum - LC# 104)
+    *
+    * Given a binary tree, find its minimum depth.
+    * The minimum depth is the number of nodes along the shortest path from the root node
+    * down to the nearest leaf node.
+    *
+    * Note: A leaf is a node with no children
+    *
+    * Example :
+    * Given a binary tree [3, 9, 20, null, null, 15, 7]
+    *
+    *     3
+    *    / \
+    *   9  20
+    *     /  \
+    *    15   7
+    *
+    * return its minimum depth  = 2
+    *
+    * */
+    /*
+    * Approach# 1 - Recursion & DFS
+    * */
+    private int minDepthRecursion(TreeNode root){
+        if(root == null)
+            return 0;
+        if((root.left == null) && (root.right == null)){
+            return 1;
+        }
+        int minDepth = Integer.MAX_VALUE;
+        if(root.left != null){
+            minDepth = Math.min(minDepthRecursion(root.left), minDepth);
+        }
+        if(root.right != null){
+            minDepth = Math.min(minDepthRecursion(root.right), minDepth);
+        }
+        return minDepth + 1;
+    }
+    /*
+    * Approach# 2 - BFS
+    *
+    * */
+    private int minDepthBFS(TreeNode root){
+        if(root == null)
+            return 0;
+        int depth = 0;
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        depth ++;
+        while (!queue.isEmpty()){
+            int size = queue.size();
+            for(int i = 0; i < size; i++){
+                TreeNode node = queue.poll();
+                //If a leaf is reached at any level, then depth from root to
+                //first reached leaf will be minimum depth.
+                if(node.left == null && node.right ==null){
+                    return depth;
+                }
+                if(node.left != null)
+                    queue.offer(node.left);
+                if(node.right != null)
+                    queue.offer(node.right);
+            }
+            depth++;
+        }
+        return depth;
     }
 }
