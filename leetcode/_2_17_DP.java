@@ -17,6 +17,7 @@ package com.dynamicprog;
 * 14. Unique Paths II (LC# 63) M
 *
 * */
+import java.util.Arrays;
 public class _2_17_DP {
     /*
     * LC# 62 Medium
@@ -97,5 +98,20 @@ public class _2_17_DP {
     *
     *
     * */
-
+    private int uniquePathsDP(int m, int n){
+        int[][] dp = new int[m][n];
+        for(int[] arr : dp)
+            Arrays.fill(arr, 1);
+        for(int col = 1; col < m; col++){
+            for(int row = 1; row < n; row++){
+                dp[col][row] = dp[col - 1][row] + dp[col][row - 1];
+            }
+        }
+        return dp[m - 1][n - 1];
+    }
+    /*
+    * Complexity Analysis
+    *   Time complexity: O(N×M).
+    *   Space complexity: O(N×M).
+    * */
 }
