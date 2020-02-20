@@ -48,6 +48,11 @@ public class _2_17_BFS {
                 {2,3,3,2,3,1}
         };
         System.out.println(obj.trapRainWater(trapRain2));
+
+        //773 - Sliding Puzzle
+        int[][] board = {{4,1,2},{5,0,3}};
+        int moves = obj.slidingPuzzleBFS(board);
+        System.out.println("Number of Moves :- "+ moves);
     }
     /*
     * LC# 42 - Hard Problem
@@ -495,5 +500,111 @@ public class _2_17_BFS {
             depth++;
         }
         return depth;
+    }
+
+    /*
+    * LC# 773 Hard
+    *
+    * On a 2x3 board, there are 5 tiles represented by the integers 1 through 5, and
+    * an empty squared represented by 0.
+    *
+    * A move consists of choosing 0 and a 4-directionally adjacent number and swapping it.
+    *
+    * The state of the board is solved if and only if the board is
+    * [[1,2,3],[4,5,0]].
+    *
+    * Given a puzzle board, return the least number of moves required so that the state
+    * of the board is solved. If it is impossible for the state of the board to be solved,
+    * return -1.
+    *
+    * Example: 1
+    *   Input : board = [[1,2,3],[4,0,5]]
+    *   Output: 1
+    *   Explanation: Swap the 0 and the 5 is one move.
+    *
+    * Example: 2
+    *   Input : board = [[1,2,3],[5,4,0]]
+    *   Output: -1
+    *   Explanation: No number of moves will make the board solved.
+    *
+    * Example: 3
+    *   Input : board = [[4,1,2],[5,0,3]]
+    *   Output: 5
+    *   Explanation: 5 is the smallest number of moves that solve the board
+    *   An Example Path:
+    *       After Move 0 : [[4,1,2],[5,0,3]]
+    *       After Move 1 : [[4,1,2],[0,5,3]]
+    *       After Move 2 : [[0,1,2],[4,5,3]]
+    *       After Move 3 : [[1,0,2],[4,5,3]]
+    *       After Move 4 : [[1,2,0],[4,5,3]]
+    *       After Move 5 : [[1,2,3],[4,5,0]]
+    *
+    * Note :
+    *       board will be a 2x3 array as described above..
+    *       board[i][j] will be a permutation of [0, 1, 2, 3, 4, 5]
+    *
+    * */
+    public static class SlidingPuzzleNode{
+        int[][] board;
+        String boardString;
+        int zero_r;
+        int zero_c;
+        int depth;
+        SlidingPuzzleNode(int[][] B, int r, int c, int d){
+            this.board = B;
+            this.boardString = Arrays.deepToString(board);
+            this.zero_r = r;
+            this.zero_c = c;
+            this.depth = d;
+        }
+    }
+    private int slidingPuzzleBFS(int[][] board){
+        int sourceRow = 0;
+        int sourceCol = 0;
+        int[] shift = new int[] {0, 1, 0, -1, 0};
+
+        search:
+            for(sourceRow  = 0; sourceRow < board.length; sourceRow++){
+                for(sourceCol = 0; sourceCol < board[0].length; sourceCol++){
+                    if(board[sourceRow][sourceCol] == 0)
+                        break search;
+                }
+            }
+
+        Queue<SlidingPuzzleNode> queue = new LinkedList<>();
+        SlidingPuzzleNode startNode = new SlidingPuzzleNode(board, sourceRow, sourceCol, 0);
+        queue.add(startNode);
+
+        Set<String> seen = new HashSet<>();
+        seen.add(startNode.boardString);
+
+        String target = Arrays.deepToString(new int[][]{{1, 2, 3,}, {4, 5, 0}});
+        while (!queue.isEmpty()){
+            SlidingPuzzleNode node = queue.remove();
+            if(node.boardString.equals(target))
+                return node.depth;
+            for(int k = 0; k < 4; k++){
+                int x = node.zero_r + shift[k];
+                int y = node.zero_c + shift[k + 1];
+                if(x >= 0 && x < board.length && y >= 0 && y < board[0].length){
+                //Math.abs(x - node.zero_r) + Math.abs(y - node.zero_c) != 1){
+                    int[][] newBoard = new int[board.length][board[0].length];
+                    int index = 0;
+                    for(int[] row : node.board) {
+                        newBoard[index++] = row.clone();
+                    }
+                    newBoard[node.zero_r][node.zero_c] = newBoard[x][y];
+                    newBoard[x][y] = 0;
+
+                    SlidingPuzzleNode n = new SlidingPuzzleNode(newBoard, x, y, node.depth + 1);
+                    if(!seen.contains(n.boardString)){
+                        queue.add(n);
+                        seen.add(n.boardString);
+
+                    }
+                }
+            }
+        }
+        return -1;
     }
 }
