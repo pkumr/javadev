@@ -727,7 +727,7 @@ public class  _2_17_BFS {
             for(int k = 0; k < 4; k++){
                 int x = current[0] + shift[k];
                 int y = current[1] + shift[k + 1];
-                    if(x >= 0 && x < n && y >= 0 && y < n && !visited[x][y] && matrix[x][y] >= matrix[current[0]][current[1]]){
+                    if(x >= 0 && x < n && y >= 0 && y < m && !visited[x][y] && matrix[x][y] >= matrix[current[0]][current[1]]){
                     visited[x][y] = true;
                     queue.offer(new int[]{x, y});
                 }
