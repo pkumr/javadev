@@ -677,6 +677,61 @@ public class  _2_17_BFS {
         for(int k = 0; k < 4; k++){
             dfs(matrix, visited, matrix[x][y], x+shift[k], y+shift[k+1]);
         }
+    }
+    /*
+     * Approach# 2 BFS
+     *
+     * */
+    public List<List<Integer>> pacificAtlanticBFS(int[][] matrix) {
+        List<List<Integer>> result = new ArrayList<>();
+        if(matrix == null || matrix.length == 0 || matrix[0].length == 0){
+            return result;
+        }
+        int n = matrix.length, m = matrix[0].length;
 
+        boolean[][] pacific = new boolean[n][m];
+        boolean[][] atlantic = new boolean[n][m];
+
+        Queue<int[]> pQueue = new LinkedList<>();
+        Queue<int[]> aQueue = new LinkedList<>();
+
+        //Vertical Border
+        for(int i = 0; i < n; i++){
+            pQueue.offer(new int[] {i, 0});
+            aQueue.offer(new int[]{i, m - 1});
+            pacific[i][0] = true;
+            atlantic[i][m - 1] = true;
+        }
+        //Horizontal Border
+        for(int i = 0; i < m; i++){
+            pQueue.offer(new int[]{0, i});
+            aQueue.offer(new int[]{n - 1, i});
+            pacific[0][i] = true;
+            atlantic[n - 1][i] = true;
+        }
+        bfs(matrix, pQueue, pacific);
+        bfs(matrix, aQueue, atlantic);
+        for(int i = 0; i < n; i++){
+            for(int j = 0; j < m; j++){
+                if(pacific[i][j] && atlantic[i][j])
+                    result.add(Arrays.asList(i, j));
+            }
+        }
+        return result;
+    }
+    public void bfs(int[][] matrix, Queue<int[]> queue, boolean[][] visited){
+        int n = matrix.length;
+        int m = matrix[0].length;
+        while (!queue.isEmpty()){
+            int[] current = queue.poll();
+            for(int k = 0; k < 4; k++){
+                int x = current[0] + shift[k];
+                int y = current[1] + shift[k + 1];
+                    if(x >= 0 && x < n && y >= 0 && y < n && !visited[x][y] && matrix[x][y] > matrix[current[0]][current[1]]){
+                    visited[x][y] = true;
+                    queue.offer(new int[]{x, y});
+                }
+            }
+        }
     }
 }
