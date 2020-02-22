@@ -23,7 +23,6 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.List;
 import java.util.Set;
-import java.util.HashMap;
 import java.util.HashSet;
 public class _2_10_BFS {
     public static void main(String[] args){
