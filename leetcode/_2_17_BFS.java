@@ -709,8 +709,8 @@ public class  _2_17_BFS {
             pacific[0][i] = true;
             atlantic[n - 1][i] = true;
         }
-        bfs(matrix, pQueue, pacific);
-        bfs(matrix, aQueue, atlantic);
+        bfsWaterFlow(matrix, pQueue, pacific);
+        bfsWaterFlow(matrix, aQueue, atlantic);
         for(int i = 0; i < n; i++){
             for(int j = 0; j < m; j++){
                 if(pacific[i][j] && atlantic[i][j])
@@ -719,7 +719,7 @@ public class  _2_17_BFS {
         }
         return result;
     }
-    public void bfs(int[][] matrix, Queue<int[]> queue, boolean[][] visited){
+    public void bfsWaterFlow(int[][] matrix, Queue<int[]> queue, boolean[][] visited){
         int n = matrix.length;
         int m = matrix[0].length;
         while (!queue.isEmpty()){
