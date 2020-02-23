@@ -136,6 +136,27 @@ public class _2_17_DP {
     *   Output: 7
     *
     *   Explanation: Because the path 1→3→1→1→1 minimizes the sum.
-    * 
+    *
     * */
+    /*
+    * Approach 1: Brute Force
+    *
+    * The Brute Force approach involves recursion. For each element, we consider two paths,
+    * rightwards and downwards and find the minimum sum out of those two.
+    * It specifies whether we need to take a right step or downward step to minimize the sum.
+    *
+    *           cost(i,j)=grid[i][j]+min(cost(i+1,j),cost(i,j+1))
+    *
+    * */
+    private int minimumPathSumBruteForce(int[][] grid){
+        return minimumPathSumBruteForceRec(grid, 0, 0);
+    }
+    private int minimumPathSumBruteForceRec(int[][] grid, int i, int j){
+        if(grid.length == i || grid[0].length == j)
+            return Integer.MAX_VALUE;
+        if(grid.length - 1 == i || grid[0].length - 1 == j)
+            return grid[i][j];
+
+        return grid[i][j] + Math.min(minimumPathSumBruteForceRec(grid, i +1, j), minimumPathSumBruteForceRec(grid, i, j + 1));
+    }
 }
