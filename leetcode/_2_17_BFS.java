@@ -734,4 +734,108 @@ public class  _2_17_BFS {
             }
         }
     }
+
+    /*
+    * LC 529 Medium
+    *
+    * Let's play the minesweeper game.
+    *
+    * You are given a 2D char matrix representing the game board. 'M' represents an unrevealed mine,
+    * 'E' represents an unrevealed empty square, 'B' represents a revealed blank square that has
+    * no adjacent (above, below, left, right and all 4 diagonals) mines, digit ('1' to '8')
+    * represents how many mines are adjacent to this revealed square, and finally 'X' represents
+    * a revealed mine.
+    *
+    * Now given the next click position (row and column indices) among al the revealed squares
+    * ('M' or 'E'), return the board after revealing this position according to the following
+    * rules:
+    *   1. If a mine ('M') is revealed, then the game is over - change it to 'X'
+    *   2. If an empty square ('E') with no adjacent mines is revealed, then change it
+    *       to revealed blank ('B') and all of its adjacent unrevealed squares should be
+    *       revealed recursively.
+    *   3. If an empty square ('E') with at least one adjacent mine is revealed, then change
+    *       it to a digit ('1' to '8') representing the number of adjacent mines.
+    *   4. Return the board when no more squares will be revealed.
+    *
+    * */
+    int[] shift8 = new int[] {0, 1, 0, -1, 0, 1, 1, -1, -1, 1};
+    // 4 - Directions - {0, 1}, {1, 0}, {0, -1}, {-1, 0}
+    // Diagonals - {1, 1,} {1, -1}, {-1, -1}, {-1,1}
+    public char[][] updateBoard(char[][] board, int[] click) {
+
+        if(board[click[0]][click[1]] == 'M'){
+            board[click[0]][click[1]] = 'X';
+            return board;
+        }
+        //m - rows, n - columns
+        int m = board.length;
+        int n = board[0].length;
+        Queue<int[]> queue = new LinkedList<>();
+        boolean[][] visited = new boolean[m][n];
+
+        queue.offer(click);
+        visited[click[0]][click[1]] = true;
+
+        while (!queue.isEmpty()){
+            int[] current = queue.poll();
+            int mines = getMines(board, current[0], current[1]);
+            if(mines == 0){
+                //'B' - revealed blank
+                board[current[0]][current[1]] = 'B';
+                for(int k = 0; k < 9; k++){
+                    int x = current[0] + shift8[k];
+                    int y = current[1] + shift8[k + 1];
+                    if(x >= 0 && x < m && y >= 0 && y < n && !visited[x][y] && board[x][y] == 'E'){
+                        queue.offer(new int[]{x, y});
+                        visited[x][y] = true;
+                    }
+                }
+
+            }else {
+                board[current[0]][current[1]] = (char)(mines + '0');
+            }
+        }
+        return board;
+    }
+    private int getMines(char[][] board, int x, int y){
+        int count = 0;
+        for(int k = 0; k < 9; k++){
+            if(k == 4) continue;
+            int nx = x + shift8[k];
+            int ny = y + shift8[k + 1];
+
+            if(nx >= 0 && nx < board.length && ny >= 0 && ny < board[0].length){
+                //count += board[nx][ny] == 'M' ? 1 : 0;
+                //if(board[nx][ny] == 'M' ||)
+                if(board[nx][ny] == 'X' || board[nx][ny] == 'M')
+                    count++;
+            }
+        }
+        return count;
+    }
+    //Approach - 2 : DFS
+    public char[][] updateBoardDFS(char[][] board, int[] click) {
+        if(board[click[0]][click[1]] == 'M'){
+            board[click[0]][click[1]] = 'X';
+            return board;
+        }
+        dfsMines(board, click[0], click[1]);
+        return board;
+    }
+    private void dfsMines(char[][] board, int x, int y){
+        //'E' -- Empty Square
+        if(x >= 0 && x < board.length && y >= 0 && y < board[0].length  && board[x][y] == 'E'){
+            int num = getMines(board, x, y);
+            if(num == 0){
+                board[x][y] = 'B';
+                for(int k = 0; k < 9; k++){
+                    int nx = shift8[k] + x;
+                    int ny = shift8[k + 1] + y;
+                    dfsMines(board, nx, ny);
+                }
+            }else {
+                board[x][y] = (char)('0' + num);
+            }
+        }
+    }
 }
