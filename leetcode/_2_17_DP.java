@@ -19,6 +19,9 @@ package com.dynamicprog;
 * */
 import java.util.Arrays;
 public class _2_17_DP {
+    public static void main(String[] args){
+        
+    }
     /*
     * LC# 62 Medium
     *
