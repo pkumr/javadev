@@ -15,7 +15,10 @@ package com.depthfirst;
 * 12. The Maze (LC# 490) M
 * 13. The Maze (LC# 505) M
 * 14. The Maze (LC# 499) H
-* 
+*
 * */
 public class _2_17_DFS {
+    public static void main(String[] args){
+
+    }
 }
