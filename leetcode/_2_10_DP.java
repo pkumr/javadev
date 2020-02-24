@@ -18,4 +18,7 @@ package com.dynamicprog;
  *
  * */
 public class _2_10_DP {
+    public static void main(String[] args){
+        
+    }
 }
