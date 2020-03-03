@@ -1,7 +1,6 @@
 package com.depthfirst;
 /*
 * Date :- 3/1/2020 to 3/8/2020
-*
 * 1. Delete Nodes And Return Forest (LC# 1110)
 * 2. Increasing Order Search Tree (LC# 897)
 * 3. Leaf-Similar Trees (LC# 872)
