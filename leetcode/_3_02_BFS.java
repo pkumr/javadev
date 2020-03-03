@@ -16,7 +16,6 @@ package com.breadthfirst;
 * 13. Shortest Path with Alternating Colors (LC# 1129)
 * 14. Minimum Moves to Reach Target with Rotations (LC# 1210)
 *
-*
 * */
 
 public class _3_02_BFS {
