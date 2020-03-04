@@ -48,12 +48,15 @@ public class _127_WordLadder {
         System.out.println("Output " + output);
     }
     private int ladderLength(String beginWord, String endWord, List<String> wordList) {
+        //If WordList doesn't contain endWord, we cannot make ladder
+        //from beginWord to endWord!
         if(!wordList.contains(endWord))
             return 0;
+        //Put all words in wordList to HashSet
         HashSet<String> set = new HashSet<>(wordList);
         Queue<String> queue = new LinkedList<>();
         int length = 0;
-        set.add(endWord);
+        //set.add(endWord);
         queue.add(beginWord);
         while (!queue.isEmpty()){
             int size = queue.size();
@@ -72,11 +75,11 @@ public class _127_WordLadder {
             char[] w  = word.toCharArray();
             for(int j = 0; j < 26; j++){
                 char c = (char)('a' + j);
-                System.out.println("Char C : " + c);
+                //System.out.println("Char C : " + c);
                 if(w[i] == c) continue;
                 w[i] = c;
                 String s = String.valueOf(w);
-                System.out.println("String s : " + s);
+                //System.out.println("String s : " + s);
                 if(set.contains(s)){
                     set.remove(s);
                     queue.offer(s);
