@@ -43,6 +43,14 @@ package com.revision.mar2020;
 import java.util.*;
 
 public class _126_WordLadderII {
+    public static void main(String[] args) {
+        String beginWord = "hit", endWord = "cog";
+        String[] wordList = {
+                "hot", "dot", "dog", "lot", "log", "cog"
+        };
+        _126_WordLadderII obj = new _126_WordLadderII();
+        List<List<String>> res = obj.findLadders(beginWord, endWord, Arrays.asList(wordList));
+    }
 
     public List<List<String>> findLadders(String beginWord, String endWord, List<String> wordList) {
         List<List<String>> result = new ArrayList<>();
