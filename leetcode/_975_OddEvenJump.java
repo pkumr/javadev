@@ -2,13 +2,14 @@ package com.interview.goog.process;
 
 
 import java.util.Arrays;
+import java.util.Map;
 import java.util.TreeMap;
 
 public class _975_OddEvenJump {
     public static void main(String[] args){
         _975_OddEvenJump obj = new _975_OddEvenJump();
         int[] input = {10,13,12,14,15};
-        System.out.println("Result One :- " + obj.oddEvenJumps(input));
+        System.out.println("Result One :- " + obj.oddEvenJumpsCeFl(input));
 
         input = new int[] {2,3,1,1,4};
         System.out.println("Result Two :- " + obj.oddEvenJumps(input));
@@ -61,5 +62,30 @@ public class _975_OddEvenJump {
         for(boolean b : odd)
             if(b) answer++;
         return answer;
+    }
+    //Method using ceiling and floor functions
+    private int oddEvenJumpsCeFl(int[] A){
+        int n = A.length;
+        int result = 1;
+        boolean[] higher = new boolean[n];
+        boolean[] lower = new boolean[n];
+        higher[n - 1] = true;
+        lower[n - 1] = true;
+        TreeMap<Integer, Integer> values = new TreeMap<>();
+        values.put(A[n - 1], n - 1);
+        for(int i = n - 2; i >= 0; i--){
+            Map.Entry high = values.ceilingEntry(A[i]);
+            Map.Entry low = values.floorEntry(A[i]);
+            if(high != null){
+                higher[i] = lower[(int)high.getValue()];
+            }
+            if(low != null){
+                lower[i] = higher[(int)low.getValue()];
+            }
+            if(higher[i])
+                result++;
+            values.put(A[i], i);
+        }
+        return result;
     }
 }
