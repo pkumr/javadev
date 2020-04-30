@@ -1,5 +1,5 @@
-# coding-problems
+# Core Programming
 
-## basics
-
-## problems
+## Algorithms
+## Data Structures
+## Problems
