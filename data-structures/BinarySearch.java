@@ -1,4 +1,4 @@
-package com.search;
+package com.datastructures;
 
 public class BinarySearch {
 	public static void main(String[] args){
