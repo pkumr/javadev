@@ -1,4 +1,4 @@
-public class _490_TheMaze{
+public class TheMaze{
 
 	public boolean hasPath(int[][] maze, int[] start, int[] destination) {
         //int[][]maze -->two dimensional array
