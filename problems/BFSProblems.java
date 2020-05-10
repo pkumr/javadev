@@ -24,7 +24,7 @@ import java.util.Queue;
 import java.util.List;
 import java.util.Set;
 import java.util.HashSet;
-public class _2_10_BFS {
+public class BFSProblems {
     public static void main(String[] args){
         char[][] island  = {
                 {'1', '1', '0', '0', '0'},
