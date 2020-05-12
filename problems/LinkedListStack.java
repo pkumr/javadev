@@ -10,7 +10,7 @@ package com.programming.problems.twenty;
 
 import java.util.Stack;
 
-public class _1_6_2020 {
+public class LinkedListStack {
     public static class ListNode {
         int val;
         ListNode next;
