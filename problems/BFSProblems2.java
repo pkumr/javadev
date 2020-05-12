@@ -20,7 +20,7 @@ package com.breadthfirst;
 
 import java.util.*;
 
-public class  _2_17_BFS {
+public class  BFSProblems2 {
     /*
      * Tree Definition
      * Definition of TreeNode in Java
