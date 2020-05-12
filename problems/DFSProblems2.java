@@ -17,7 +17,7 @@ package com.depthfirst;
 * 14. The Maze (LC# 499) H
 *
 * */
-public class _2_17_DFS {
+public class DFSProblems2 {
     public static void main(String[] args){
 
     }
