@@ -18,7 +18,7 @@ package com.dynamicprog;
 *
 * */
 import java.util.Arrays;
-public class _2_17_DP {
+public class DynamicProgram2 {
     public static void main(String[] args){
         
     }
