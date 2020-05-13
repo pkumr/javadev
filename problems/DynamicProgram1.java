@@ -17,7 +17,7 @@ package com.dynamicprog;
  * 14. Coin Change (LC# 322) M
  *
  * */
-public class DynamicProgram {
+public class DynamicProgram1 {
     public static void main(String[] args){
         
     }
