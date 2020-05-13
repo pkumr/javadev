@@ -22,7 +22,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
 
-public class DFSProblems {
+public class DFSProblems1 {
     /*
     * Tree Definition
     * Definition of TreeNode in Java
