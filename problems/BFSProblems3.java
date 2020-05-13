@@ -19,7 +19,7 @@ package com.breadthfirst;
 *
 *
 * */
-public class _2_24_BFS {
+public class BFSProblems3 {
     public static void main(String[] args){
 
     }
