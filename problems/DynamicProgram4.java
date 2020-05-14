@@ -18,5 +18,5 @@ package com.dynamicprog;
 * 14. Odd Even Jump (LC# 975)
 *
 * */
-public class _3_02_DP {
+public class DynamicProgram4 {
 }
