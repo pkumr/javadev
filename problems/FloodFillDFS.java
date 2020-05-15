@@ -1,4 +1,4 @@
-public class _733_FloodFill{
+public class FloodFillDFS{
   public int[][] floodFill(int[][] image, int sr, int sc, int newColor) {
        int col = image[sr][sc];
        if(col != newColor)
