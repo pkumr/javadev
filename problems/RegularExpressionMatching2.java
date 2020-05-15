@@ -1,4 +1,4 @@
-public class _10_RegularExpressionMatching{
+public class RegularExpressionMatching2{
 	//Using Recursion
 	public boolean isMatchRecursion(String s, String p){
 		if(p.isEmpty())
