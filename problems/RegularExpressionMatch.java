@@ -9,27 +9,27 @@
  * */
 package com.programming.problems.twenty;
 
-public class _1_9_2020 {
+public class RegularExpressionMatch {
     public static void main(String[] args) {
         String s = "xvb";
         String p = "..b";
-        boolean result = new _1_9_2020().isMatchSimple(s, p);
+        boolean result = new RegularExpressionMatch().isMatchSimple(s, p);
         System.out.println(result);
 
         s = "ab";
         p = ".*c";
-        result = new _1_9_2020().isMatchRecursion(s, p);
+        result = new RegularExpressionMatch().isMatchRecursion(s, p);
         System.out.println(result + "--> with repeating (more than 2) character in string!");
 
         s = "bbccaa";
         p = "b*c.a*";
-        result = new _1_9_2020().isMatchRecursion(s, p);
+        result = new RegularExpressionMatch().isMatchRecursion(s, p);
         System.out.println(result + "--> without repeating character in string!");
 
 
         s = "abb";
         p = ".b*";
-        result = new _1_9_2020().isMatchDP(s, p);
+        result = new RegularExpressionMatch().isMatchDP(s, p);
         System.out.println(result + "--> with DP Program");
         /*
         String parveen = "Kumar";
