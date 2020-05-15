@@ -1,6 +1,6 @@
 package com.problems;
 
-public class _312_BurstBalloons {
+public class BurstBalloonsDP {
     public static void main(String[] args){
         int[] input = {3, 1, 5, 8};
         System.out.println("Output:- " + new _312_BurstBalloons().maxCoins(input));
