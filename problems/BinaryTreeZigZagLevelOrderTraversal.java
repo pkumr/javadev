@@ -16,6 +16,7 @@ public class BinaryTreeZigZagLevelOrderTraversal{
 			this.val = x;
 		}
 	}
+	//BFS Approach
 	public List<List<Integer>> zigzagLevelOrderBFS(TreeNode root){
 		List<List<Integer>> result = new ArrayList<>();
 		if(root == null){
@@ -41,6 +42,29 @@ public class BinaryTreeZigZagLevelOrderTraversal{
 			level = !level;
 			result.add(sublist);
 		}
+		return result;
+	}
+	//DFS Approach
+	private void DFS(TreeNode root, int level, List<List<Integer>> result){
+		if(level >= result.size()){
+			LinkedList<Integer> newLevel = new LinkedList<>();
+			newLevel.add(root.val);
+			result.add(newLevel);
+		}else{
+			if(level % 2 == 0){
+				result.get(level).add(root.val);
+			}else{
+				result.get(level).add(0, root.val);
+			}
+		}
+		if(root.left != null) DFS(root.left, level + 1, result);
+		if(root.right != null) DFS(root.right, level + 1, result);
+	}
+	public List<List<Integer>> zigzagLevelOrderDFS(TreeNode root){
+		if(root == null)
+			return new ArrayList<>();
+		List<List<Integer>> result = new ArrayList<>();
+		DFS(root, 0, result);
 		return result;
 	}
 }
