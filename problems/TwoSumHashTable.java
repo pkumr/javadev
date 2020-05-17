@@ -6,7 +6,7 @@
 ***************************************************************************/
 import java.util.*;
 
-public class _1_Two_Sum{
+public class TwoSumHashTable{
 	//****************Brute Force Approach*******************
 	//Time Compexity - O(N-Square)
 	public int[] twoSum_bruteforce(int[] nums, int target) {
