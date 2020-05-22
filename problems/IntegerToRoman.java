@@ -1,4 +1,5 @@
-public class _12_IntegerToRoman {
+package com.problems;
+public class IntegerToRoman {
     public String intToRoman(int num) {
         StringBuilder builder = new StringBuilder();
         int[] div = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
