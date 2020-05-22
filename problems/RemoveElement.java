@@ -1,4 +1,4 @@
-public class _27_RemoveElement{
+public class RemoveElement{
 	/*
 	* Given nums = [3,2,2,3], val = 3,
 	*
