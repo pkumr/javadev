@@ -3,7 +3,7 @@ package com.problems;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
-public class _23_MergeKSortedLists {
+public class MergeKSortedLists {
     public static class ListNode {
         int val;
         ListNode next;
