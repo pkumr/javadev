@@ -2,7 +2,7 @@ package com.problems;
 import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
-public class _22_GenerateParentheses {
+public class GenerateParentheses {
     public static void main(String[] args){
         int input = 3;
         System.out.println("Output: - " + new _22_GenerateParentheses().
