@@ -1,10 +1,10 @@
 package com.problems;
 import java.util.HashMap;
 import java.util.Stack;
-public class _20_ValidParentheses {
+public class ValidParentheses {
     // Hash table that takes care of the mappings.
     private HashMap<Character, Character> mappings;
-    public _20_ValidParentheses(){
+    public ValidParentheses(){
         this.mappings = new HashMap<Character, Character>();
         this.mappings.put(')', '(');
         this.mappings.put('}', '{');
