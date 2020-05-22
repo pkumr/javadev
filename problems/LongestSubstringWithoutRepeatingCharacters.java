@@ -1,8 +1,8 @@
-package com.interview.goog.arraystring;
+package com.problems;
 
 import java.util.HashSet;
 
-public class _3_LongestSubstringWithoutRepeatingCharacters {
+public class LongestSubstringWithoutRepeatingCharacters {
     public static void main(String[] args){
         _3_LongestSubstringWithoutRepeatingCharacters obj =
                 new _3_LongestSubstringWithoutRepeatingCharacters();
