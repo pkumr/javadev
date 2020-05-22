@@ -2,7 +2,7 @@ import java.util.List;
 import java.util.Arrays;
 import java.util.LinkedList;
 
-public class _15_3Sum {
+public class 3Sum {
     /*
     *
     * Given an array nums of n integers, are there elements a, b, c 
