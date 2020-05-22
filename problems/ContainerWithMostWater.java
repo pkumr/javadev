@@ -1,11 +1,11 @@
-package com.interview.goog.arraystring;
+package com.problems;
 /*
 * First Commit - 26-Jan-2020
 * Second Commit - 17-Apr-2020
 *
 *
 * */
-public class _11_ContainerWithMostWater {
+public class ContainerWithMostWater {
 
     public static void main(String[] args){
         int[] height = {1,8,6,2,5,4,8,3,7};
