@@ -2,7 +2,7 @@ package com.problems;
 
 import java.util.Arrays;
 
-public class _62_UniquePaths {
+public class UniquePaths {
     public static void main(String[] args){
         int m = 3; //3 Cols
         int n = 2; //2 Rows
