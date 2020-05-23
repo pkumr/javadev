@@ -1,6 +1,6 @@
 package com.problems;
 
-public class _52_NQueensII {
+public class NQueensII {
     public static void main(String[] args){
         int n = 4;
         System.out.println(new _52_NQueensII().totalNQueens(n));
