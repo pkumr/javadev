@@ -22,7 +22,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Arrays;
 
-public class _49_GroupAnagrams {
+public class GroupAnagrams {
     public static void main(String[] args){
         String[] input = {"eat", "tea", "tan", "ate", "nat", "bat"};
         _49_GroupAnagrams obj  = new _49_GroupAnagrams();
