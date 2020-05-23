@@ -4,7 +4,7 @@ package com.problems;
 import java.util.ArrayList;
 import java.util.List;
 
-public class _51_NQueens {
+public class NQueens {
     public static void main(String[] args){
         int numQueen = 4;
         System.out.println(new _51_NQueens().solveNQueens(numQueen));
