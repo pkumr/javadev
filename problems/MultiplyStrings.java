@@ -1,6 +1,6 @@
-package com.interview.goog.arraystring;
+package com.problems;
 
-public class _43_MultiplyStrings {
+public class MultiplyStrings {
     public static void main(String[] args){
         String num1 = "123";
         String num2 = "456";
