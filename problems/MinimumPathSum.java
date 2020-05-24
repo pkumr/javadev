@@ -15,7 +15,7 @@ Output: 7
 Explanation: Because the path 1→3→1→1→1 minimizes the sum.
 
 */
-public class _64_MinimumPathSum {
+public class MinimumPathSum {
 	public int minPathSum(int[][] grid){
 		//Create a 2-D dp array to sum the result
 		int[][] dp = new int[grid.length][grid[0].length];
