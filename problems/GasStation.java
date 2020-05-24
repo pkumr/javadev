@@ -1,4 +1,4 @@
-public class _134_GasStation {
+public class GasStation {
 	public int canCompleteCircuit(int[] gas, int[] cost){
 		int n = gas.length;
 		int canbeCompleted = 0;
