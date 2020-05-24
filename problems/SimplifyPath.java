@@ -1,4 +1,4 @@
-class _71_SimplifyPath {
+class SimplifyPath {
     public String simplifyPath(String path) {
         Stack<String> stack = new Stack<String>();
         Set<String> skip = new HashSet<>();
