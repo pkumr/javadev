@@ -1,6 +1,6 @@
 package com.problems;
 
-public class _63_UniquePathsII {
+public class UniquePathsII {
     public static void main(String[] args) {
         _63_UniquePathsII obj = new _63_UniquePathsII();
 
