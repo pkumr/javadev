@@ -3,7 +3,7 @@ package com.problems;
 import java.util.ArrayList;
 import java.util.List;
 
-public class _68_TextJustification {
+public class TextJustification {
     public static void main(String[] args) {
         String[] text = {"This", "is", "an", "example", "of", "text", "justification."};
         int maxWidth = 16;
