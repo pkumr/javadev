@@ -1,7 +1,7 @@
 import java.util.Map;
 import java.util.HashMap;
 
-public class _146_LRU_Cache{
+public class LRU_Cache{
 	//Approach : HashMap with DoublyLinkedList
 	//The problem can be solved with hashmap that keeps
 	//track of keys and its values in the double linked
