@@ -1,4 +1,4 @@
-public class _141_LinkedListCycle{
+public class LinkedListCycle{
 	//Approach - Two Pointers
 	/*
 	# Imagine two runners runnning on a track at different speed. What heepns when the track is actually
