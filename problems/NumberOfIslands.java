@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class _200_NumberOfIslands{
+public class NumberOfIslands{
 
 	public int numIsLands(char[][] grid){
 		if(grid == null || grid.length == 0){
