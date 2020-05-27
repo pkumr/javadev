@@ -28,6 +28,6 @@ package com.problems;
 * MEDIUM
 *
 * */
-public class _438_FindAllAnagramsInString {
+public class FindAllAnagramsInString {
     
 }
