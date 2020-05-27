@@ -1,4 +1,4 @@
-public class _340_LongestSubstringwithAtMostKDistinctCharacters{
+public class LongestSubstringwithAtMostKDistinctCharacters{
 	public int lengthOfLongestSubstringKDistinct(String s, int k) {
         int n = s.length();
         if (n*k == 0) return 0;
