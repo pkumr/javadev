@@ -21,7 +21,7 @@ package com.problems;
 * EASY |
 * */
 import java.util.Arrays;
-public class _242_ValidAnagram {
+public class ValidAnagram {
     public static void main(String[] args){
         String s = "anagram";
         String t = "nagaram";
