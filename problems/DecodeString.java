@@ -1,5 +1,5 @@
 import java.util.Stack;
-public class _394_DecodeString{
+public class DecodeString{
 	public String decodeString(String s){
 		Stack<Integer> counts = new Stack<>();
 		Stack<String> result = new Stack<>();
