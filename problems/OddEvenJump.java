@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class _975_OddEvenJump {
+public class OddEvenJump {
     public static void main(String[] args){
         _975_OddEvenJump obj = new _975_OddEvenJump();
         int[] input = {10,13,12,14,15};
