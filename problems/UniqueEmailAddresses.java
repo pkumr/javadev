@@ -3,7 +3,7 @@ package com.interview.goog.process;
 import java.util.HashSet;
 import java.util.Set;
 
-public class _929_UniqueEmailAddresses {
+public class UniqueEmailAddresses {
     public static void main(String[] args){
         String[] emails = {
                 "test.email+alex@leetcode.com",
