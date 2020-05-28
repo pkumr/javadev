@@ -3,7 +3,7 @@ package com.problems;
 import java.util.ArrayList;
 import java.util.List;
 
-public class _763_PartitionLabels {
+public class PartitionLabels {
     public static void main(String[] args){
         String S = "ababcbacadefegdehijhklij";
         System.out.println("Output :- " + new _763_PartitionLabels().partitionLabels(S));
