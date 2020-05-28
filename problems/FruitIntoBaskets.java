@@ -3,7 +3,7 @@ package com.interview.goog.process;
 import java.util.Map;
 import java.util.HashMap;
 
-public class _904_FruitIntoBaskets {
+public class FruitIntoBaskets {
     public static void main(String[] args) {
         int[] fruits = {3,3,3,1,2,1,1,2,3,3,4};
         System.out.println(new _904_FruitIntoBaskets().totalFruit(fruits));
