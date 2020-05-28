@@ -1,4 +1,4 @@
-public class _678_ValidParenthesisString{
+public class ValidParenthesisString{
 	public boolean checkValidString(String s) {
         //Take a stack for left '(' brackets
         Stack<Integer> leftID = new Stack<>();
