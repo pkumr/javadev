@@ -1,6 +1,6 @@
 package com.interview.goog.process;
 
-public class _482_LicenseKeyFormatting {
+public class LicenseKeyFormatting {
     public static void main(String[] args){
         String S = "5F3Z-2e-9-w";
         int K = 4;
