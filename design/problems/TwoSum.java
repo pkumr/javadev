@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 *
 * 1. Two Sum Easy
@@ -17,6 +17,6 @@ package com.revision.mar2020;
 *
 * */
 
-public class _1_TwoSum {
+public class TwoSum {
 
 }

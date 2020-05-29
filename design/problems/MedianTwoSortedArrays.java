@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * There are two sorted arrays nums1 and nums2 of size m and n respectively.
 * Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).
@@ -19,5 +19,5 @@ package com.revision.mar2020;
 * Topics – Arrays, Binary Search, Divide and Conquer
 *
 * */
-public class _4_MedianTwoSortedArrays {
+public class MedianTwoSortedArrays {
 }

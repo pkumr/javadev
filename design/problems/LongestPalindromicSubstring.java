@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Given a string s, find the longest palindromic substring in s.
 * You may assume that the maximum length of s is 1000.
@@ -16,5 +16,5 @@ package com.revision.mar2020;
 * Topics – String, Dynamic Programming
 *
 * */
-public class _5_LongestPalindromicSubstring {
+public class LongestPalindromicSubstring {
 }

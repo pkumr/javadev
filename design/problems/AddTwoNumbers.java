@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 *
 * 2. Add Two Numbers (Medium)
@@ -16,5 +16,5 @@ package com.revision.mar2020;
 * Topics – LinkedList, Math
 *
 * */
-public class _2_AddTwoNumbers {
+public class AddTwoNumbers {
 }
