@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Given an array nums of n integers, are there elements a, b, c
 * in nums such that a + b + c = 0? Find all unique triplets in
@@ -19,5 +19,5 @@ package com.revision.mar2020;
 * Topics – Array, Two Pointer
 *
 * */
-public class _15_3Sum {
+public class _3Sum {
 }

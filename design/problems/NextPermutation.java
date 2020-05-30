@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Implement next permutation, which rearranges numbers into the
 * lexicographically next greater permutation of numbers.If such
@@ -15,5 +15,5 @@ package com.revision.mar2020;
 * Topics – Array
 *
 * */
-public class _31_NextPermutation {
+public class NextPermutation {
 }

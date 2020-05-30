@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Given an array nums and a value val, remove all instances of
 * that value in-place and return the new length.
@@ -46,5 +46,5 @@ package com.revision.mar2020;
 * Topics – Array, Two Pointers
 *
 * */
-public class _27_RemoveElement {
+public class RemoveElement {
 }
