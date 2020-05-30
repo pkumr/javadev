@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Given a collection of intervals, merge all overlapping intervals.
 *
@@ -17,5 +17,5 @@ package com.revision.mar2020;
 *
 * Topics – Array, Sort
 * */
-public class _56_MergeIntervals {
+public class MergeIntervals {
 }

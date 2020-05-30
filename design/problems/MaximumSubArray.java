@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Given an integer array nums, find the contiguous subarray (containing at
 * least one number) which has the largest sum and return its sum.
@@ -14,5 +14,5 @@ package com.revision.mar2020;
 *
 * Topics – Array, Divide and Conquer, Dynamic Programming
 * */
-public class _53_MaximumSubArray {
+public class MaximumSubArray {
 }

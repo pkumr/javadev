@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Given an array of non-negative integers, you are initially positioned at the
 * first index of the array. Each element in the array represents your maximum
@@ -18,5 +18,5 @@ package com.revision.mar2020;
 * Topics – Array, Greedy
 *
 * */
-public class _55_JumpGame {
+public class JumpGame {
 }

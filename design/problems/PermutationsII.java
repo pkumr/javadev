@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Given a collection of numbers that might contain duplicates,
 * return all possible unique permutations.
@@ -15,5 +15,5 @@ package com.revision.mar2020;
 *
 * */
 
-public class _47_PermutationsII {
+public class PermutationsII {
 }

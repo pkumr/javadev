@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Given a matrix of m x n elements (m rows, n columns),
 * return all elements of the matrix in spiral order.
@@ -25,5 +25,5 @@ package com.revision.mar2020;
 *
 * Topics – Array
 * */
-public class _54_SpiralMatrix {
+public class SpiralMatrix {
 }

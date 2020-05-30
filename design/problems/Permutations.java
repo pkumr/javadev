@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Given a collection of distinct integers, return all possible permutations.
 *
@@ -16,5 +16,5 @@ package com.revision.mar2020;
 * ]
 *
 * */
-public class _46_Permutations {
+public class Permutations {
 }

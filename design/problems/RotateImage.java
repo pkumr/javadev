@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * You are given an n x n 2D matrix representing an image.
 * Rotate the image by 90 degrees (clockwise).
@@ -41,5 +41,5 @@ package com.revision.mar2020;
 * Topics – Array
 *
 * */
-public class _48_RotateImage {
+public class RotateImage {
 }
