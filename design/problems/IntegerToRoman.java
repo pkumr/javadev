@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
 * Symbol       Value
@@ -51,5 +51,5 @@ package com.revision.mar2020;
 *
 *
 * */
-public class _12_IntegerToRoman {
+public class IntegerToRoman {
 }

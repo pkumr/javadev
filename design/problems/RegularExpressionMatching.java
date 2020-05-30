@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Given an input string (s) and a pattern (p), implement regular
 * expression matching with support for '.' and '*'.
@@ -15,5 +15,5 @@ package com.revision.mar2020;
 *
 *
 * */
-public class _10_RegularExpressionMatching {
+public class RegularExpressionMatching {
 }

@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 *
 * Write a function to find the longest common prefix string amongst an array of strings.
@@ -15,5 +15,5 @@ All given inputs are in lowercase letters a-z.
 Topics – String
 *
 * */
-public class _14_LongestCommonPrefix {
+public class LongestCommonPrefix {
 }

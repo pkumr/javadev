@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 *
 * Given n non-negative integers a1, a2, ..., an , where each represents
@@ -17,5 +17,5 @@ package com.revision.mar2020;
 * Topics – Array, Two Pointers
 *
 * */
-public class _11_ContainerWithMostWater {
+public class ContainerWithMostWater {
 }
