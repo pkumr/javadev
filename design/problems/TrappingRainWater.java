@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Given n non-negative integers representing an elevation map where
 * the width of each bar is 1, compute how much water it is able to
@@ -11,5 +11,5 @@ package com.revision.mar2020;
 * Topics – Array, Two Pointer, Stack
 *
 * */
-public class _42_TrappingRainWater {
+public class TrappingRainWater {
 }

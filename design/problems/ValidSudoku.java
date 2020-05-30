@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Determine if a 9x9 Sudoku board is valid. Only the filled cells need to be
 * validated according to the following rules:
@@ -53,5 +53,5 @@ package com.revision.mar2020;
 * Topics – Hash Table
 *
 * */
-public class _36_ValidSudoku {
+public class ValidSudoku {
 }

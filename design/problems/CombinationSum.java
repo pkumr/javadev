@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Given a set of candidate numbers (candidates) (without duplicates)
 * and a target number (target), find all unique combinations in candidates
@@ -31,5 +31,5 @@ package com.revision.mar2020;
 *
 * */
 
-public class _39_CombinationSum {
+public class CombinationSum {
 }

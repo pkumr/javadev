@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Given an input string (s) and a pattern (p), implement wildcard pattern
 * matching with support for '?' and '*'.
@@ -51,6 +51,6 @@ package com.revision.mar2020;
 *
 * */
 
-public class _44_WildcardMatching {
+public class WildcardMatching {
 
 }
