@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * There is a robot starting at position (0, 0), the origin, on a 2D plane.
 * Given a sequence of its moves, judge if this robot ends up at (0, 0)
@@ -33,5 +33,5 @@ package com.revision.mar2020;
 * Topics - String
 *
 * */
-public class _657_RobotReturnToOrigin {
+public class RobotReturnToOrigin {
 }

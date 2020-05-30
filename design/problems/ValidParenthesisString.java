@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Given a string containing only three types of characters: '(', ')' and
 * '*', write a function to check whether this string is valid. We define
@@ -30,5 +30,5 @@ package com.revision.mar2020;
 * Topics - String
 *
 * */
-public class _678_ValidParenthesisString {
+public class ValidParenthesisString {
 }

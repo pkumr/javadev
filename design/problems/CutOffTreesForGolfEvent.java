@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * You are asked to cut off trees in a forest for a golf event. The forest is
 * represented as a non-negative 2D map, in this map:
@@ -62,5 +62,5 @@ package com.revision.mar2020;
 *   0 <= forest[i][j] <= 10^9
 *
 * */
-public class _675_CutOffTreesForGolfEvent {
+public class CutOffTreesForGolfEvent {
 }

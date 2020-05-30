@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * On a 2x3 board, there are 5 tiles represented by the integers 1 through 5,
 * and an empty square represented by 0.
@@ -39,5 +39,5 @@ package com.revision.mar2020;
 *   board will be a 2 x 3 array as described above.
 *   board[i][j] will be a permutation of [0, 1, 2, 3, 4, 5].
 * */
-public class _773_SlidingPuzzle {
+public class SlidingPuzzle {
 }

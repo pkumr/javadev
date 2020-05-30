@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * On a staircase, the i-th step has some non-negative cost cost[i] assigned
 * (0 indexed).
@@ -26,5 +26,5 @@ package com.revision.mar2020;
 * Topics - Array, Dynamic Programming
 *
 * */
-public class _746_MinCostClimbingStairs {
+public class MinCostClimbingStairs {
 }

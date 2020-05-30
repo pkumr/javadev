@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * On an NxN chessboard, a knight starts at the r-th row and c-th column and attempts
 * to make exactly K moves. The rows and columns are 0 indexed, so the top-left square
@@ -30,5 +30,5 @@ package com.revision.mar2020;
 *   The knight always initially starts on the board.
 *
 * */
-public class _688_KnightProbabilityInChessboard {
+public class KnightProbabilityInChessboard {
 }

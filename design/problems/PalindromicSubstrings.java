@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Given a string, your task is to count how many palindromic substrings
 * in this string.
@@ -19,5 +19,5 @@ package com.revision.mar2020;
 *
 * Topics - String, Dynamic Programming
 * */
-public class _647_PalindromicSubstrings {
+public class PalindromicSubstrings {
 }
