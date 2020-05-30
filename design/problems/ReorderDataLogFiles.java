@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * You have an array of logs.  Each log is a space delimited string of words.
 * For each log, the first word in each log is an alphanumeric identifier.
@@ -28,5 +28,5 @@ package com.revision.mar2020;
 *
 * Topics - String
 * */
-public class _937_ReorderDataLogFiles {
+public class ReorderDataLogFiles {
 }

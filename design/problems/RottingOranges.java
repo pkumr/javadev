@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * In a given grid, each cell can have one of three values:
 *
@@ -38,5 +38,5 @@ package com.revision.mar2020;
 * Topics - BFS
 *
 * */
-public class _994_RottingOranges {
+public class RottingOranges {
 }

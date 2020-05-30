@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * You have some sticks with positive integer lengths.You can connect any two
 * sticks of lengths X and Y into one stick by paying a cost of X + Y.  You
@@ -23,5 +23,5 @@ package com.revision.mar2020;
 * Topics - Greedy
 *
 * */
-public class _1167_MinimumCostConnectSticks {
+public class MinimumCostConnectSticks {
 }

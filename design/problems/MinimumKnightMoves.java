@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * In an infinite chess board with coordinates from -infinity to +infinity,
 * you have a knight at square [0, 0].
@@ -27,5 +27,5 @@ package com.revision.mar2020;
 *
 * Topics - BFS
 * */
-public class _1197_MinimumKnightMoves {
+public class MinimumKnightMoves {
 }

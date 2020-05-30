@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * There are n servers numbered from 0 to n-1 connected by undirected
 * server-to-server connections forming a network where connections[i] = [a, b]
@@ -25,5 +25,5 @@ package com.revision.mar2020;
 * Topics - DFS
 *
 * */
-public class _1192_CriticalConnectionsInNetwork {
+public class CriticalConnectionsInNetwork {
 }

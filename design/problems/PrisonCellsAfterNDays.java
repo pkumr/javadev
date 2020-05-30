@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * There are 8 prison cells in a row, and each cell is either occupied or vacant.
 * Each day, whether the cell is occupied or vacant changes according to the
@@ -43,5 +43,5 @@ package com.revision.mar2020;
 *
 * Topics - Hash Table
 * */
-public class _957_PrisonCellsAfterNDays {
+public class PrisonCellsAfterNDays {
 }
