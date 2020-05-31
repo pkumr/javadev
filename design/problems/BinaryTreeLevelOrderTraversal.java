@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Given a binary tree, return the level order traversal of its nodes'
 * values. (ie, from left to right, level by level).
@@ -19,5 +19,5 @@ package com.revision.mar2020;
 *
 * Topics – Tree, Breadth-First-Search
 * */
-public class _102_BinaryTreeLevelOrderTraversal {
+public class BinaryTreeLevelOrderTraversal {
 }

@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Given a binary tree, find its maximum depth. The maximum depth is the
 * number of nodes along the longest path from the root node down to the
@@ -16,5 +16,5 @@ package com.revision.mar2020;
 *
 * Topics – Tree, Depth-First-Search
 * */
-public class _104_MaximumDepthBinaryTree {
+public class MaximumDepthBinaryTree {
 }

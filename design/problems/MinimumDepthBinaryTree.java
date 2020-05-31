@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Given a binary tree, find its minimum depth. The minimum depth is the
 * number of nodes along the shortest path from the root node down to the
@@ -17,5 +17,5 @@ package com.revision.mar2020;
 *
 * Topics – Array, Tree, Depth-First-Search, Breadth-First Search
 * */
-public class _111_MinimumDepthBinaryTree {
+public class MinimumDepthBinaryTree {
 }

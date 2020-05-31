@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Given a collection of integers that might contain duplicates,
 * nums, return all possible subsets (the power set).
@@ -19,5 +19,5 @@ package com.revision.mar2020;
 * ]
 *
 * */
-public class _90_SubsetsII {
+public class SubsetsII {
 }
