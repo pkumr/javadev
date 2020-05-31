@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Design and implement a data structure for Least Frequently Used (LFU) cache.
 * It should support the following operations: get and put.
@@ -36,5 +36,5 @@ package com.revision.mar2020;
 *
 * Topics – Design
 * */
-public class _460_LFUCache {
+public class LFUCache {
 }

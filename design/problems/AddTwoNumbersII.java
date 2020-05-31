@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * You are given two non-empty linked lists representing two non-negative
 * integers. The most significant digit comes first and each of their nodes
@@ -16,5 +16,5 @@ package com.revision.mar2020;
 *
 * Topics – LinkedList
 * */
-public class _445_AddTwoNumbersII {
+public class AddTwoNumbersII {
 }

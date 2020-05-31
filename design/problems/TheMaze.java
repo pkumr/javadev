@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * There is a ball in a maze with empty spaces and walls. The ball can go through
 * empty spaces by rolling up, down, left or right, but it won't stop rolling until
@@ -54,5 +54,5 @@ package com.revision.mar2020;
 * Topics – BFS, DFS
 *
 * */
-public class _490_TheMaze {
+public class TheMaze {
 }

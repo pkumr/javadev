@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Given an m x n matrix of positive integers representing the height
 * of each unit cell in a 2D elevation map, compute the volume of water
@@ -22,5 +22,5 @@ package com.revision.mar2020;
 *
 * Topics – BFS, Heap
 * */
-public class _407_TrappingRainWaterII {
+public class TrappingRainWaterII {
 }

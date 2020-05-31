@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Given an m x n matrix of non-negative integers representing the height of each
 * unit cell in a continent, the "Pacific ocean" touches the left and top edges of
@@ -33,5 +33,5 @@ package com.revision.mar2020;
 * Topic - BFS, DFS
 *
 *  */
-public class _417_PacificAtlanticWaterFlow {
+public class PacificAtlanticWaterFlow {
 }
