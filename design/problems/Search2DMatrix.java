@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Write an efficient algorithm that searches for a value in an m x n matrix.
 * This matrix has the following properties:
@@ -28,5 +28,5 @@ package com.revision.mar2020;
 * Topics – Array, Binary Search
 *
 * */
-public class _74_Search2DMatrix {
+public class Search2DMatrix {
 }

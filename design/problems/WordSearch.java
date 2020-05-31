@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Given a 2D board and a word, find if the word exists in the grid.
 * The word can be constructed from letters of sequentially adjacent cell,
@@ -25,5 +25,5 @@ package com.revision.mar2020;
 *
 * Topics – Array, Backtracking
 * */
-public class _79_WordSearch {
+public class WordSearch {
 }

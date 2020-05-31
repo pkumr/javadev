@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Given an absolute path for a file (Unix-style), simplify it. Or in
 * other words, convert it to the canonical path.
@@ -42,5 +42,5 @@ package com.revision.mar2020;
 *
 * Topics – String, Stack
 * */
-public class _71_SimplifyPath {
+public class SimplifyPath {
 }

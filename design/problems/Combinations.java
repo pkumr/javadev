@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Given two integers n and k, return all possible combinations of k
 * numbers out of 1 ... n.
@@ -17,5 +17,5 @@ package com.revision.mar2020;
 *
 * Topics – Backtracking
 * */
-public class _77_Combinations {
+public class Combinations {
 }

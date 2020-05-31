@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Given two words word1 and word2, find the minimum number of operations
 * required to convert word1 to word2.
@@ -27,5 +27,5 @@ Input: word1 = "intention", word2 = "execution"
 *
 * Topics – String, Dynamic Programming
 * */
-public class _72_EditDistance {
+public class EditDistance {
 }
