@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Given two words (beginWord and endWord), and a dictionary's word list,
 * find all shortest transformation sequence(s) from beginWord to endWord, such that:
@@ -42,7 +42,7 @@ package com.revision.mar2020;
 
 import java.util.*;
 
-public class _126_WordLadderII {
+public class WordLadderII {
     public static void main(String[] args) {
         String beginWord = "hit", endWord = "cog";
         String[] wordList = {
