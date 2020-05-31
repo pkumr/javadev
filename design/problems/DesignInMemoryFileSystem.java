@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Design an in-memory file system to simulate the following functions: ls: Given
 * a path in string format. If it is a file path, return a list that only contains
@@ -39,5 +39,5 @@ package com.revision.mar2020;
 * Topics - Design
 *
 * */
-public class _588_DesignInMemoryFileSystem {
+public class DesignInMemoryFileSystem {
 }

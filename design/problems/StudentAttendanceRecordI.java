@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * You are given a string representing an attendance record for a student.
 * The record only contains the following three characters:
@@ -22,5 +22,5 @@ package com.revision.mar2020;
 *
 * Topics – String
 * */
-public class _551_StudentAttendanceRecordI {
+public class StudentAttendanceRecordI {
 }
