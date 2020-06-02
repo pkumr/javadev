@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Given a non-empty string s and a dictionary wordDict containing a list
 * of non-empty words, add spaces in s to construct a sentence where each
@@ -39,5 +39,5 @@ package com.revision.mar2020;
 *
 * Topics – Dynamic Programming, Backtracking
 * */
-public class _140_WordBreakII {
+public class WordBreakII {
 }

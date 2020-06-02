@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * There are N gas stations along a circular route, where the amount
 * of gas at station i is gas[i]. You have a car with an unlimited gas
@@ -48,5 +48,5 @@ package com.revision.mar2020;
 *
 * Topics – Greedy
 * */
-public class _134_GasStation {
+public class GasStation {
 }

@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Given a non-empty array of integers, every element appears twice
 * except for one. Find that single one.
@@ -16,5 +16,5 @@ package com.revision.mar2020;
 *
 * Topics – Hash Table, Bit Manipulation
 * */
-public class _136_SingleNumber {
+public class SingleNumber {
 }

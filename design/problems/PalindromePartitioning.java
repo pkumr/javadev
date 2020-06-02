@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Given a string s, partition s such that every substring of the partition is a palindrome.
 *
@@ -14,5 +14,5 @@ package com.revision.mar2020;
 * ]
 *
 * */
-public class _131_PalindromePartitioning {
+public class PalindromePartitioning {
 }

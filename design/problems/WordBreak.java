@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Given a non-empty string s and a dictionary wordDict containing a
 * list of non-empty words, determine if s can be segmented into a
@@ -27,5 +27,5 @@ package com.revision.mar2020;
 *
 * Topics – Dynamic Programming
 * */
-public class _139_WordBreak {
+public class WordBreak {
 }
