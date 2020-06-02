@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Given an integer, write a function to determine if it is a power of two.
 *
@@ -18,5 +18,5 @@ package com.revision.mar2020;
 *
 * Topics – Math, Bit Manipulation
 * */
-public class _231_PowerOfTwo {
+public class PowerOfTwo {
 }

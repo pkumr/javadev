@@ -16,5 +16,5 @@ package com.revision.mar2020;
 *
 * Topics – Heap, Greedy, Sort
 * */
-public class _253_MeetingRoomsII {
+public class MeetingRoomsII {
 }

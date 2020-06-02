@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Given an array nums of n integers where n > 1, return an array output
 * such that output[i] is equal to the product of all the elements of nums except nums[i].
@@ -17,5 +17,5 @@ package com.revision.mar2020;
 *
 * Topics – Array
 * */
-public class _238_ProductOfArrayExceptSelf {
+public class ProductOfArrayExceptSelf {
 }

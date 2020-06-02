@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Given a binary tree, return all root-to-leaf paths.
 * Note: A leaf is a node with no children.
@@ -15,5 +15,5 @@ package com.revision.mar2020;
 *
 * Topics – Tree, Depth First Search
 * */
-public class _257_BinaryTreePaths {
+public class BinaryTreePaths {
 }

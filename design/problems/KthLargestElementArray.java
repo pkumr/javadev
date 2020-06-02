@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Find the kth largest element in an unsorted array. Note that it is
 * the kth largest element in the sorted order, not the kth distinct element.
@@ -16,5 +16,5 @@ package com.revision.mar2020;
 *
 * Topics – Divide and Conquer, Heap
 * */
-public class _215_KthLargestElementArray {
+public class KthLargestElementArray {
 }

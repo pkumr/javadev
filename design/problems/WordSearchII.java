@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Given a 2D board and a list of words from the dictionary, find all
 * words in the board. Each word must be constructed from letters of
@@ -24,5 +24,5 @@ package com.revision.mar2020;
 *
 * Topics – Trie, Backtracking
 * */
-public class _212_WordSearchII {
+public class WordSearchII {
 }
