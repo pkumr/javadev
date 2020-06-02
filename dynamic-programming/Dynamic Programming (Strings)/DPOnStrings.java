@@ -1,4 +1,4 @@
-public class _1_DPOnStrings{
+public class DPOnStrings{
 	//General problem statement for this pattern can 
 	//vary but most of the time you are given two strings 
 	//where lengths of those strings are not big

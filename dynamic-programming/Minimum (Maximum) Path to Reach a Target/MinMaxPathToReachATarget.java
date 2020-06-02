@@ -1,4 +1,4 @@
-public class _1_MinMaxPathToReachATarget{
+public class MinMaxPathToReachATarget{
 	//Minimum (Maximum) Path to Reach a Targe
 	//Generate problem statement for this pattern
 	//

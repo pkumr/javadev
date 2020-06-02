@@ -1,4 +1,4 @@
-public class _1_DecisionMaking{
+public class DecisionMaking{
 	//The general problem statement for this pattern is forgiven 
 	//situation decide whether to use or not to use the current state.
 	// So, the problem requires you to make a decision at a current state.

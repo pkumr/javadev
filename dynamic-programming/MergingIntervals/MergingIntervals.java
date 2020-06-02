@@ -1,4 +1,4 @@
-public class _1_MergingIntervals{
+public class MergingIntervals{
 	//Merging Intervals
 	//Statement:
 	//Given a set of numbers find an optimal solution for a problem considering
