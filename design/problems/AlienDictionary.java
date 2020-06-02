@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * There is a new alien language which uses the latin alphabet. However,
 * the order among letters are unknown to you. You receive a list of non-empty
@@ -46,5 +46,5 @@ package com.revision.mar2020;
 *
 * Topics – Graph, Topological Sort
 * */
-public class _269_AlienDictionary {
+public class AlienDictionary {
 }

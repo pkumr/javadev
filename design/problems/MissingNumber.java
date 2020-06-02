@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Given an array containing n distinct numbers taken from 0, 1, 2, ..., n,
 * find the one that is missing from the array.
@@ -17,5 +17,5 @@ package com.revision.mar2020;
 *
 * Topics – Array, Math, Bit Manipulation
 * */
-public class _268_MissingNumber {
+public class MissingNumber {
 }

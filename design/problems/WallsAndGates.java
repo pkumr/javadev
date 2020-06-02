@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * You are given a m x n 2D grid initialized with these three possible values.
 *   1. -1 - A wall or an obstacle.
@@ -24,5 +24,5 @@ package com.revision.mar2020;
 *
 * Topics – BFS
 * */
-public class _286_WallsAndGates {
+public class WallsAndGates {
 }

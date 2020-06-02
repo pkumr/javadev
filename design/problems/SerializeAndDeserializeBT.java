@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Serialization is the process of converting a data structure or object
 * into a sequence of bits so that it can be stored in a file or memory buffer,
@@ -28,5 +28,5 @@ package com.revision.mar2020;
 *
 * Topics – Tree, Design
 * */
-public class _297_SerializeAndDeserializeBT {
+public class SerializeAndDeserializeBT {
 }
