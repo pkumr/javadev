@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Given a non-empty array of integers, return the k most frequent elements.
 *
@@ -17,5 +17,5 @@ package com.revision.mar2020;
 *
 * Topics – Hash Table, Heap
 * */
-public class _347_TopKFrequentElements {
+public class TopKFrequentElements {
 }

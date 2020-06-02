@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Given a string, find the first non-repeating character in it
 * and return it's index. If it doesn't exist, return -1.
@@ -14,5 +14,5 @@ package com.revision.mar2020;
 *
 * Topics – Hash Table, String
 * */
-public class _387_FirstUniqueCharacterInString {
+public class FirstUniqueCharacterInString {
 }

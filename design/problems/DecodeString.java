@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Given an encoded string, return its decoded string.
 *
@@ -20,5 +20,5 @@ package com.revision.mar2020;
 *
 * Topics – DFS, Stack
 * */
-public class _394_DecodeString {
+public class DecodeString {
 }

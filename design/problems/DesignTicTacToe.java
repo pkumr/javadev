@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Design a Tic-tac-toe game that is played between two players on a
 * n x n grid. You may assume the following rules:
@@ -51,5 +51,5 @@ package com.revision.mar2020;
 *
 * Topics – Design
 * */
-public class _348_DesignTicTacToe {
+public class DesignTicTacToe {
 }
