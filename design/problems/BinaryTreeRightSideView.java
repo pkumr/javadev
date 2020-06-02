@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Given a binary tree, imagine yourself standing on the right side of it,
 * return the values of the nodes you can see ordered from top to bottom.
@@ -15,5 +15,5 @@ package com.revision.mar2020;
 *
 * Topics – Tree, DFS, BFS
 * */
-public class _199_BinaryTreeRightSideView {
+public class BinaryTreeRightSideView {
 }

@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Given a 2d grid map of '1's (land) and '0's (water), count the
 * number of islands. An island is surrounded by water and is formed
@@ -25,5 +25,5 @@ package com.revision.mar2020;
 *
 * Topics – Union Find, DFS, BFS
 * */
-public class _200_NumberOfIslands {
+public class NumberOfIslands {
 }

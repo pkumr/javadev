@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * You are a professional robber planning to rob houses along a street.
 * Each house has a certain amount of money stashed, the only constraint
@@ -23,5 +23,5 @@ package com.revision.mar2020;
 *
 * Topics – Dynamic Programming
 * */
-public class _198_HouseRobber {
+public class HouseRobber {
 }

@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * There are a total of numCourses courses you have to take, labeled
 * from 0 to numCourses-1. Some courses may have prerequisites, for
@@ -29,5 +29,5 @@ package com.revision.mar2020;
 *
 * Topics – Topological Sort
 * */
-public class _207_CourseSchedule {
+public class CourseSchedule {
 }

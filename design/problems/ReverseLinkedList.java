@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Reverse a singly linked list.
 *
@@ -12,5 +12,5 @@ package com.revision.mar2020;
 *
 * Topics – LinkedList
 * */
-public class _206_ReverseLinkedList {
+public class ReverseLinkedList {
 }

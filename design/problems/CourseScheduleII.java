@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * There are a total of n courses you have to take, labeled from 0 to n-1.
 * Some courses may have prerequisites, for example to take course 0 you
@@ -29,5 +29,5 @@ package com.revision.mar2020;
 *
 * Topics – Topological Sort
 * */
-public class _210_CourseScheduleII {
+public class CourseScheduleII {
 }
