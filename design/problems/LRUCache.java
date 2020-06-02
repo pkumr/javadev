@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Design and implement a data structure for Least Recently Used (LRU) cache.
 * It should support the following operations: get and put.
@@ -24,5 +24,5 @@ package com.revision.mar2020;
 
 * Topics – Design
 * */
-public class _146_LRUCache {
+public class LRUCache {
 }

@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Write a program to find the node at which the intersection of two singly
 * linked lists begins.
@@ -35,5 +35,5 @@ package com.revision.mar2020;
 *
 * Topics – LinkedList
 * */
-public class _160_IntersectionTwoLinkedLists {
+public class IntersectionTwoLinkedLists {
 }

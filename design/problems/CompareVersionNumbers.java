@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Compare two version numbers version1 and version2. If version1 > version2
 * return 1; if version1 < version2 return -1;otherwise return 0.
@@ -43,5 +43,5 @@ package com.revision.mar2020;
 *
 * Topics – String
 * */
-public class _165_CompareVersionNumbers {
+public class CompareVersionNumbers {
 }

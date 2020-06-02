@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Given a linked list, determine if it has a cycle in it. To represent a
 * cycle in the given linked list, we use an integer pos which represents
@@ -27,5 +27,5 @@ package com.revision.mar2020;
 *
 * Topics – LinkedList, Two Pointers
 * */
-public class _141_LinkedListCycle {
+public class LinkedListCycle {
 }
