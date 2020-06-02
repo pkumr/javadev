@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * You are given coins of different denominations and a total amount
 * of money amount. Write a function to compute the fewest number of
@@ -19,5 +19,5 @@ package com.revision.mar2020;
 *
 * Topics – Dynamic Programming
 * */
-public class _322_CoinChange {
+public class CoinChange {
 }

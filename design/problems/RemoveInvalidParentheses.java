@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Remove the minimum number of invalid parentheses in order to make the
 * input string valid. Return all possible results.
@@ -18,5 +18,5 @@ package com.revision.mar2020;
 *
 * Topics – BFS, DFS
 * */
-public class _301_RemoveInvalidParentheses {
+public class RemoveInvalidParentheses {
 }

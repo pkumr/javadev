@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * Given a string, find the length of the longest substring T that
 * contains at most k distinct characters.
@@ -15,5 +15,5 @@ package com.revision.mar2020;
 *
 * Topics – Hash Table, String, Sliding Window
 * */
-public class _340_LongestSubstringAtMostKDistChar {
+public class LongestSubstringAtMostKDistChar {
 }

@@ -1,4 +1,4 @@
-package com.revision.mar2020;
+package com.revision;
 /*
 * You want to build a house on an empty land which reaches all buildings
 * in the shortest amount of distance. You can only move up, down, left and
@@ -29,5 +29,5 @@ package com.revision.mar2020;
 *
 * Topics – BFS
 * */
-public class _317_ShortestDistanceFromAllBuildings {
+public class ShortestDistanceFromAllBuildings {
 }
