@@ -1,5 +1,13 @@
+package com.problems;
+
 public class TheMaze{
 
+	public static void main(String[] args){
+
+	}
+	/*
+	Approach# - BFS
+	*/
 	public boolean hasPath(int[][] maze, int[] start, int[] destination) {
         //int[][]maze -->two dimensional array
         //int[]start --> coordinate of start position 
