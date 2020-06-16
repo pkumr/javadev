@@ -1,10 +1,13 @@
 package com.compjava;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.PriorityQueue;
 
 public class PQueues {
     private void maxHeapOneD(int[] arr){
         PriorityQueue<Integer> priorityQueue = new PriorityQueue<>(new Comparator<Integer>() {
+            //Default is min heap (Number 1 - Number 2) <-- Increasing Order
+            //If We reverse Order (Number 2 - Number 1) <-- Decreasing Order
             @Override
             public int compare(Integer number1, Integer number2) {
                 return number2 - number1;
@@ -34,6 +37,49 @@ public class PQueues {
         System.out.println();
     }
 
+    private void minHeapByFrequency(int[] arr){
+        HashMap<Integer, Integer> count = new HashMap<>();
+        for(int n : arr)
+            count.put(n, count.getOrDefault(n, 0) + 1);
+
+        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>(new Comparator<Integer>() {
+            @Override
+            public int compare(Integer number1, Integer number2) {
+                return count.get(number1) - count.get(number2);
+            }
+        });
+
+        priorityQueue.addAll(count.keySet());
+
+        while (!priorityQueue.isEmpty()){
+            int  i = priorityQueue.poll();
+            System.out.print(i +" Freq --> ");
+            System.out.print(count.get(i) + " || ");
+        }
+        System.out.println();
+    }
+
+    private void maxHeapByFrequency(int[] arr){
+        HashMap<Integer, Integer> count = new HashMap<>();
+        for(int n : arr)
+            count.put(n, count.getOrDefault(n, 0) + 1);
+
+        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>(new Comparator<Integer>() {
+            @Override
+            public int compare(Integer number1, Integer number2) {
+                return count.get(number2) - count.get(number1);
+            }
+        });
+
+        priorityQueue.addAll(count.keySet());
+
+        while (!priorityQueue.isEmpty()){
+            int  i = priorityQueue.poll();
+            System.out.print(i +" Freq --> ");
+            System.out.print(count.get(i) + " || ");
+        }
+        System.out.println();
+    }
     public static void main(String[] args) {
         PQueues obj = new PQueues();
         int[] inMinHeap = {3, 2, 1, 5, 6, 4};
@@ -43,5 +89,14 @@ public class PQueues {
         int[] inMaxHeap = {3, 2, 1, 5, 6, 4};
         System.out.println("Input --> 3, 2, 1, 5, 6, 4");
         obj.maxHeapOneD(inMaxHeap);
+
+        int[] inMinHeapFreq = {1, 1, 1, 2, 2, 3, 4, 4, 5, 6, 6, 6, 6, 8, 8, 9};
+        System.out.println("Input --> 1, 1, 1, 2, 2, 3, 4, 4, 5, 6, 6, 6, 6, 8, 8, 9");
+        obj.minHeapByFrequency(inMinHeapFreq);
+
+        int[] inMaxHeapFreq = {1, 1, 1, 2, 2, 3, 4, 4, 5, 6, 6, 6, 6, 8, 8, 9};
+        System.out.println("Input --> 1, 1, 1, 2, 2, 3, 4, 4, 5, 6, 6, 6, 6, 8, 8, 9");
+        obj.maxHeapByFrequency(inMinHeapFreq);
+
     }
 }
