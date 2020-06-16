@@ -1,4 +1,5 @@
 package com.compjava;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.PriorityQueue;
@@ -80,6 +81,20 @@ public class PQueues {
         }
         System.out.println();
     }
+
+    private void minHeap2DZeroCol(int[][] input){
+        PriorityQueue<int[]> priorityQueue = new PriorityQueue<>(new Comparator<int[]>() {
+            @Override
+            public int compare(int[] a, int[] b) {
+                return a[0] - b[0];
+            }
+        });
+        priorityQueue.addAll(Arrays.asList(input));
+        while (!priorityQueue.isEmpty()){
+            int[] out = priorityQueue.poll();
+            System.out.println("0th Val -> " + out[0] + " 1st Val -> " + out[1]);
+        }
+    }
     public static void main(String[] args) {
         PQueues obj = new PQueues();
         int[] inMinHeap = {3, 2, 1, 5, 6, 4};
@@ -98,5 +113,14 @@ public class PQueues {
         System.out.println("Input --> 1, 1, 1, 2, 2, 3, 4, 4, 5, 6, 6, 6, 6, 8, 8, 9");
         obj.maxHeapByFrequency(inMinHeapFreq);
 
+        int[][] intervalsZeroCol = {
+                {5, 10},
+                {4, 11},
+                {2, 9},
+                {3, 12},
+                {6, 14}
+        };
+        System.out.println("{5, 10}, {4, 11}, {2, 9}, {3, 12}, {6, 14}" );
+        obj.minHeap2DZeroCol(intervalsZeroCol);
     }
 }
