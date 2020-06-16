@@ -95,6 +95,21 @@ public class PQueues {
             System.out.println("0th Val -> " + out[0] + " 1st Val -> " + out[1]);
         }
     }
+
+    private void maxHeap2DFirstCol(int[][] input){
+        PriorityQueue<int[]> priorityQueue = new PriorityQueue<>(new Comparator<int[]>() {
+            @Override
+            public int compare(int[] a, int[] b) {
+                return b[1] - a[1];
+            }
+        });
+        priorityQueue.addAll(Arrays.asList(input));
+        while (!priorityQueue.isEmpty()){
+            int[] out = priorityQueue.poll();
+            System.out.println("0th Val -> " + out[0] + " 1st Val -> " + out[1]);
+        }
+    }
+
     public static void main(String[] args) {
         PQueues obj = new PQueues();
         int[] inMinHeap = {3, 2, 1, 5, 6, 4};
@@ -122,5 +137,15 @@ public class PQueues {
         };
         System.out.println("{5, 10}, {4, 11}, {2, 9}, {3, 12}, {6, 14}" );
         obj.minHeap2DZeroCol(intervalsZeroCol);
+
+        int[][] intervalsFirstCol = {
+                {5, 10},
+                {4, 11},
+                {2, 9},
+                {3, 12},
+                {6, 14}
+        };
+        System.out.println("{5, 10}, {4, 11}, {2, 9}, {3, 12}, {6, 14}" );
+        obj.maxHeap2DFirstCol(intervalsFirstCol);
     }
 }
