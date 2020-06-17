@@ -64,6 +64,32 @@ public class JArrays {
             System.out.println("{" + arr[0] + " ," + arr[1] + "}");
         }
     }
+    private void findIndexByValues(int[][] matrix, int val){
+        int m = matrix.length, n = matrix[0].length;
+        int row = 0;
+        int col = 0;
+        int left = 0;
+        int right = m * n - 1;
+        int pivot;
+        System.out.println("Right " + right);
+        while (left <= right){
+            pivot = (left + right) / 2;
+            row = pivot / n;
+            col = pivot % n;
+            if(matrix[row][col] == val){
+                System.out.println("Value to Find - " + val);
+                System.out.print("Row - " + row + " Col - " + col);
+                break;
+            }else {
+                if(val < matrix[row][col]){
+                    right = pivot - 1;
+                }else {
+                    left = pivot + 1;
+                }
+            }
+        }
+    }
+
     public static void main(String[] args) {
         JArrays obj = new JArrays();
         //MAX VAL Matrix
@@ -101,5 +127,14 @@ public class JArrays {
         System.out.println("Sorted Array DESC by first Column");
         obj.sortArrayRowsDSC(inputArrDESC);
         obj.sortArrayRowsDESCLB(inputArrDESC);
+
+        int[][] matrix = {
+                {1,   3,  5,  7},
+                {10, 11, 16, 20},
+                {23, 30, 34, 50}
+        };
+        int val = 30;
+        obj.findIndexByValues(matrix, val);
+
     }
 }
