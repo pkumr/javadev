@@ -10,6 +10,15 @@ public class 3Sum {
     * the array which gives the sum of zero.
     *
     */
+    public List<List<Integer>> threeSumTP(int[] nums){
+        List<List<Integer> result = new ArrayList<>();
+        Arrays.sort(nums);
+
+        return result;
+    }
+
+
+
     public List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> result = new LinkedList<>();
         Arrays.sort(nums);
