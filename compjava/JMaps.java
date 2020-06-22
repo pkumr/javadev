@@ -1,5 +1,9 @@
 package com.compjava;
 
+/*
+@author : Parveen Kumar
+*/
+
 import java.util.*;
 
 public class JMaps {
