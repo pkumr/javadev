@@ -15,7 +15,7 @@ import java.util.StringTokenizer;
 
 
 
-public class Model {
+public class CPTemplate {
     public static void main(String[] args) {
         InputStream inputStream = System.in;
         OutputStream outputStream = System.out;
