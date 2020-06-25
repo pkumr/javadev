@@ -372,10 +372,126 @@ public class FlowControl {
     *   5. assert
     *
     * */
-    private void transferStatements(){
+    private void transferStatements() {
+        /************************ break ************************/
+        // break will make exit from loop, switch and labeled block
+        // breaks loop execution based on condition
+        // if we use break in other than loop, switch or labeled block
+        // this error occur -> Error: java: break outside switch or loop
+        for (int i = 0; i < 10; i++) {
+            if (i == 5)
+                break;
+            System.out.println("for loop " + i);
+        }
+        System.out.println("Outside For for loop");
+        int a = 10;
+        while (a >= 0) {
+            a--;
+            System.out.println("While Loop " + a);
+            if (a == 5)
+                break;
+        }
+        System.out.println("While Loop Ends !");
+        //labeled block <-- we need to mention break {name of labeled block}
+        lb:
+        {
+            int x = 2;
+            System.out.println("Begin Labeled Block");
+            if (x == 2)
+                break lb;
+            System.out.println("Labeled Block after break");
+        }
+        System.out.println("Outside Labeled Block");
 
+
+        /****************************** continue *****************************/
+        // continue can be used inside loops to skip current iteration and continue
+        // the next iteration
+
+        //if we use continue in any place other than loop we get
+        // Error java: continue outside of loop
+        for (int i = 0; i < 10; i++){
+            //if i is even then go to skip iteration and go to next
+            //iteration, it will not print even i values
+            if(i % 2 == 0)
+                continue;
+            System.out.println("for continue " + i);
+        }
+        int j = 40;
+        while (j > 0){
+            //keep dividing j with 2 in while loop
+            j = j / 2;
+            //if j is greater than 5, skip the iteration
+            //it will not print any value until j becomes
+            //less than equals to 5
+            if(j > 5)
+                continue;
+            System.out.println("while continue " + j);
+        }
+        /*
+        int c_ch = 10;
+        if(c_ch == 10){
+            //continue; //Error: java: continue outside of loop
+        }
+        */
+        //********************** labeled break & continue *****************
+        labelI:
+        for(int I = 0; I < 10; I++){
+            labelJ:
+            for(int J = 0; J < 10; J++){
+                //labelK:
+                for(int K = 0; K < 10; K++){
+                    System.out.println("I " + I + " J " + J + " K " + K);
+                    //break; <-- this will break the inner loop
+                    //and control goes to J
+                    //break;
+                    //Now if we want to break outer loop say Jth loop
+                    //we use break labelJ
+                    break labelJ;
+                    //Same if we want to break ith loop, use Ith label
+                }
+            }
+        }
+        int aw = 10, bw = 5;
+        lwa:
+        while (aw > 0){
+            aw--;
+            lwb:
+            while (bw > 0){
+                bw--;
+                int inner = 5;
+                while (inner > 0){
+                    inner--;
+                    System.out.println("aw " + aw + " bw " + bw + " inner " + inner );
+                    //same like break, simple continue will continue inner while
+                    //loop, but if we want to continue outer loop, then we have to
+                    //use label whatever outer loop we want to continue!
+                    if(inner > 2)
+                        continue lwb;
+                }
+            }
+        }
+        /*********************** do while() & continue ******************/
+        int x = 0;
+        do {
+            x++;
+            System.out.println("x " + x);
+            //continue will go to while and not to start of the code
+            //if condition in while is true, next iteration start from
+            //first line after do. Following is the output of program:
+            //  x 1
+            //  x 4
+            //  x 6
+            //  x 8
+            //  x 10
+            if(++x < 5)
+                continue;
+            x++;
+            System.out.println("x " +x);
+        }while (++x < 10);
     }
     public static void main(String[] args) {
-
+        FlowControl fo = new FlowControl();
+        fo.transferStatements();
     }
 }
