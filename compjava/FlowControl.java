@@ -209,7 +209,7 @@ public class FlowControl {
         //Default should at the end of all cases (Recommended)
         //For Example - below, if sx is not 1, it will execute
         //default and then Case 1 too because of switch fall through
-        
+
         switch (sx){
             default:
                 System.out.println("def");
@@ -226,8 +226,142 @@ public class FlowControl {
     *   4. for each loop (1.5version)
     *
     * */
-    private void iterativeStatements(){
+    private void iterativeStatements() {
+        boolean b = false;
+        //************************ while() **********************
+        //While Argument should be boolean type
+        //Any other type throws compile time error
+        while (b) {
+            break;
+        }
+        //Following works in c++ (1 is true in c++) but in java it will fail
+        //with Error:incompatible types: int cannot be converted to boolean
+        /*
+        while (1){
 
+        }
+        */
+        /*
+        while (true)
+            System.out.println("Valid");
+        */
+        /*
+        while (true) //In valid No Declarative statement
+            int x = 10;
+        */
+        //while (true); //it is valid statement but Error:java: unreachable statement
+        //
+        while (true) {
+            System.out.println("Print");
+            break; //If we will not put break, the loop will print infinitely
+        }
+        /* This loop will never enter to body, so while(false) is invalid
+                (unreachable statement)
+        while (false){
+            System.out.println("Print");
+        }
+        */
+
+        int ia = 10, ib = 20;
+        while (ia < ib) {
+            //JVM considers variable and not values
+            System.out.println("Infinite Loop - No compile time error ");
+        }
+        final int cia = 10, cib = 20;
+        /*
+        while (cia < cib){
+            System.out.println("Loop has no issue but other statement get unreachable");
+        }
+         */
+        /*
+        while (cia > cib){
+        //LOOP is INVALID
+        }
+        */
+
+        //******************************** do while() ****************************************
+        //to execute while loop at least once, use do while
+        //semi-colon after while is must in JAVA, c++ it is not
+        boolean db = false;
+        do {
+
+        } while (db);
+
+        //SCENARIO #1
+        do
+            System.out.println("Without braces do while");
+        while (db);
+
+        //SCENARIO #2
+        /*
+        do
+          int x = 10;  invalid statement
+        while (db);
+        */
+
+        //SCENARIO #3
+        //do while(true); <--invalid (as no body is mentioned)
+
+        //SCENARIO #4
+        /*
+        do while (true)
+            System.out.println("Valid Statement");
+        while (false);
+        */
+        /********************************* for loop ************************************/
+        /*
+        * for(initialize (1) , condition (2) (5), increment/decrement (4) (7)){
+        *       loop body (3) (6)
+        * }
+        *  Sequence of for loop is
+        *   1. Initialization of variable (s) of same type
+        *   2. condition check
+        *   3. loop body
+        *   4. increment / decrement
+        *       (((loop body > condition > increment/decrement)))
+        *
+        * */
+        for(int fi = 0; fi < 10; fi++){
+            System.out.println();
+        }
+        for(int fi = 0, fj = 0; fi < 10 && fj < 10; fi++, fj++)
+        {
+            System.out.println("Valid ");
+        }
+        /*
+        *
+        * *********** Parts of For Loops and their properties *******************
+        * for(1(any java expression); 2(boolean value); 3(any java expression)){
+        * }
+        *
+        * */
+        int i = 0;
+        for(System.out.println("Hello"); i < 3; System.out.println("Hi")){
+            i++;
+        }
+        // Above example will print -->
+        // Hello
+        // Hi
+        // Hi
+        // Hi
+
+        /*
+        * for loop <-- infinite loops if
+        * we don't pass anything
+        * */
+        /*
+        for(;;){
+            System.out.println("Hello Infinite Loop");
+        }
+        for(;;);
+        NOTE :- Infinite Loops are commented because next line of code
+                become unreachable after infinite loop!
+        */
+
+        //Reverse For Loop
+        for(int j = 10; j >= 0;  j--){
+            System.out.println("From 10 to 0");
+        }
     }
     /*
     * Transfer Statements
