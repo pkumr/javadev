@@ -1,6 +1,6 @@
 package com.compjava;
 //@author : Parveen Kumar
-/*  INHERITANCE : Java classes allow single inheritance but interfaces can
+/*  INHERITANCE (IS - A Relation) : Java classes allow single inheritance but interfaces can
 *   extend multiple interfaces
 *
 *  Example :
@@ -71,6 +71,17 @@ class InterClass implements A, B, C{
     }
 }
 
+/*
+* Cyclic Inheritance is not allowed in Java
+* JAVA ERROR --> Error: java: cyclic inheritance involving com.compjava.CycleA
+*
+class CycleA extends CycleB{
+
+}
+class CycleB extends CycleA{
+
+}
+*/
 public class JInheritance {
     public static void main(String[] args) {
         //Instance of Q has all methods available from base (P) class (public methods)
