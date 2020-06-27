@@ -1,10 +1,10 @@
 package com.compjava;
-
-
 /*
-* METHOD OVERLOAD AND OVERRIDE
+* *********** METHOD OVERLOADING *****************
+* @author : Parveen Kumar
+*
 * */
-public class JMethodCalling {
+public class JOverLoading {
     public static void main(String[] args) {
         MethodOverloading objOne = new MethodOverloading();
         //SCENARIO #1
@@ -43,6 +43,39 @@ public class JMethodCalling {
         //objOne.methodFive(5, 5);
         //ERROR
         //Error:(43, 15) java: reference to methodFive is ambiguous
+
+        //SCENARIO #6
+        //objOne.methodSix(null);
+
+        //The above call will give compile time error. We have seen in Scenario that
+        //child class is given high priority.
+
+        //But here String and String Buffer are at same level and that is why java
+        //compiler will throw error while identifying the method to overload
+
+        //Error: java: reference to methodSix is ambiguous
+        //  both method methodSix(java.lang.String) in com.compjava.MethodOverloading and
+        //  method methodSix(java.lang.StringBuffer) in com.compjava.MethodOverloading match
+
+        //SCENARIO #7
+        objOne.methodSeven();//var-arg method
+        objOne.methodSeven(10, 20); //var-arg method
+        objOne.methodSeven(10); //General Method
+        //var - arg method will get least priority
+
+        //SCENARIO #8
+        Test test = new Test();
+        Parent p = new Parent();
+        test.method(p); // Parent Version called
+
+        Child c = new Child();
+        test.method(c); //Child Version called
+
+        Parent p1 = new Child();
+        test.method(p1); //Parent Version called
+        //because reference used here (p1) is of Parent
+        //and compiler will give preference to reference
+        //in overloading
     }
 }
 class MethodOverloading{
@@ -82,6 +115,40 @@ class MethodOverloading{
         System.out.println("9 methodFive - int and float");
     }
     public void methodFive(float f, int i){
-        System.out.println("9 methodFive - int and float");
+        System.out.println("10 methodFive - int and float");
+    }
+
+    //SCENARIO #6
+    public void methodSix(String s){
+        System.out.println("11 methodSix - String Version ");
+    }
+    public void methodSix(StringBuffer stringBuffer){
+        System.out.println("12 methodSix - String Buffer Version");
+    }
+
+    //SCENARIO #7
+    public void methodSeven(int x){
+        System.out.println("13 - methodSeven - General Method");
+    }
+    public void methodSeven(int... x){
+        System.out.println("14 - methodSeven - Var - arg method");
     }
 }
+//SCENARIO #8
+//In overloading Method Resolution always takes care by compiler
+//based on reference type
+class Parent{
+
+}
+class Child extends Parent{
+
+}
+class Test{
+    public void method(Parent p){
+        System.out.println("Parent Version");
+    }
+    public void method(Child c){
+        System.out.println("Child Version");
+    }
+}
+
