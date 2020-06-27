@@ -1,6 +1,8 @@
 package com.compjava;
-//@author : Parveen Kumar
-/*  INHERITANCE (IS - A Relation) : Java classes allow single inheritance but interfaces can
+/*
+* @author : Parveen Kumar
+*
+*  INHERITANCE (IS - A Relation) : Java classes allow single inheritance but interfaces can
 *   extend multiple interfaces
 *
 *  Example :
@@ -64,7 +66,6 @@ interface C extends A, B{
     void print();
 }
 class InterClass implements A, B, C{
-
     @Override
     public void print() {
 
