@@ -3,9 +3,31 @@ package com.compjava;
 * @author : Parveen Kumar
 * OOPS
 *
+* Three Pillars of OOPS
+*   1.  Encapsulation --> Security
+*   2.  Inheritance --> Reusability
+*   3.  Polymorphism --> Flexibility to Programmer
+*
 * */
-public class JBasicOOPs {
 
+/*
+* Encapsulation (data/information hiding)
+* */
+class Employee{
+    //Salary is hidden
+    private double salary = 10000;
+    //To access salary getSalary is method to access from Employee
+    public double getSalary(){
+        return salary;
+    }
+}
+
+public class JBasicOOPs {
+    public static void main(String[] args) {
+        //Encapsulation example
+        Employee employee = new Employee();
+        double salary = employee.getSalary();
+    }
 }
 /*
  * HAS - A relation
@@ -82,6 +104,18 @@ class Professor{
 }
 
 /*
+* Polymorphism
+* There are two type of Polymorphism
+*   1. Static Polymorphism (or) Compile Time Polymorphism (or) Early Binding
+*       Example :   a) Overloading
+*                   b) Method Hiding (static method example)
+*   2. Dynamic Polymorphism (or) Runtime Polymorphism (or) Late Binding
+*       Example :   a) Overriding
+*
+* */
+
+
+/*
 *                      Difference between Overloading & Overriding
 *   ----------------------------------------------------------------------------------------------------
 *   #      PROPERTY                OVERLOADING                 OVERRIDING
@@ -131,5 +165,5 @@ class Professor{
 *   3. Here we can hold child object of     | 3.   Here we can hold child object of any type
 *       particular type (ArrayList Only)    |      in parent object (ex List can hold ArrayList
 *                                           |       LinkedList etc)
-*   
+*
 * */
