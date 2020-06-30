@@ -27,6 +27,9 @@ public class JBasicOOPs {
         //Encapsulation example
         Employee employee = new Employee();
         double salary = employee.getSalary();
+
+        Person p = new Student("Parveen", 30);
+        System.out.println( p.getName());
     }
 }
 /*
@@ -51,6 +54,17 @@ public class JBasicOOPs {
 class Person{
     String name;
     int age;
+    Person(){
+
+    }
+    Person(String name, int age){
+        this.age = age;
+        this.name = name;
+    }
+    public String getName(){
+        System.out.println("Name from Parent");
+        return name;
+    }
 }
 /*
 * COMPOSITION (HAS - A relation)
@@ -167,3 +181,30 @@ class Professor{
 *                                           |       LinkedList etc)
 *
 * */
+
+/*
+* super and calling parent class methods
+* */
+class Student extends Person{
+    int marks;
+    int rollno;
+    Student(){
+        //Default Constructor
+        super();
+    }
+    Student(String name, int age){
+        super(name, age);
+    }
+    Student(String name, int age, int marks, int rollno){
+        super(name,age);
+        this.marks = marks;
+        this.rollno = rollno;
+        this.age = age;
+        this.name = name;
+    }
+    public String getName(){
+        System.out.println("Name from Child Class");
+        //Here Child method actuall calls Parent class method
+        return super.getName();
+    }
+}
