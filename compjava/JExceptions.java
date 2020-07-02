@@ -27,6 +27,12 @@ package com.compjava;
 *
 * */
 
+import java.io.FileNotFoundException;
+import java.sql.SQLData;
+import java.sql.SQLException;
+import java.sql.SQLInput;
+import java.sql.SQLOutput;
+
 /*
 *
 * Exception - An unwanted event that disrupts the normal flow of program is Exceptions.
@@ -50,4 +56,53 @@ package com.compjava;
 *
 * */
 public class JExceptions {
+    public static void main(String[] args) {
+        JExceptions obj = new JExceptions();
+        ////Arithmetic Exception (Divide by 0)
+        obj.arithmeticError();
+    }
+    //Arithmetic Exception
+    private void arithmeticError(){
+        try {
+            //Divide by 0 Exception
+            int i = 10/0;
+        }catch (ArithmeticException e){
+            //Complete Info - printStackTrace
+            //internally default exception handler will use
+            //printStackTrace method to print exception information
+            //to console
+            e.printStackTrace();
+            System.out.println(e.toString());
+            System.out.println(e.getMessage());
+        }
+    }
+    //Exception Handling - best practice
+    private void exceptionBestPractice(){
+        try {
+            /*
+             * Suppose we have some code and following
+             * exception can occur in code, so we should
+             * have separate blocks for Exception Type
+             *   a) Arithmetic Exception
+             *   b) SQL Exception
+             *   c) FileNotFoundException
+             *   d) Default Exception
+             *
+             * For Every exception, it is recommended to take
+             * separate catch block.
+             *
+             */
+            System.out.println("Exception Handling Practice");
+
+        }catch (ArithmeticException e){
+            System.out.println("Exception Handling Practice");
+        }/*catch (SQLException sqlException){
+            System.out.println("Exception Handling Practice");
+        }
+        catch (FileNotFoundException fileNotFoundException){
+            System.out.println("Exception Handling Practice");
+        }*/catch (Exception exception){
+            System.out.println("Exception Handling Practice");
+        }
+    }
 }
