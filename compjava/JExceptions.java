@@ -1,4 +1,5 @@
 package com.compjava;
+
 /*
 * @author : Parveen Kumar
 *
@@ -36,6 +37,7 @@ import java.sql.SQLOutput;
 /*
 *
 * Exception - An unwanted event that disrupts the normal flow of program is Exceptions.
+* Parent Class for Exception is Throwable
 * Types of Exceptions in JAVA :
 *       1.  Checked -- compile time
 *       2.  Unchecked -- usually runtime
@@ -60,6 +62,8 @@ public class JExceptions {
         JExceptions obj = new JExceptions();
         ////Arithmetic Exception (Divide by 0)
         obj.arithmeticError();
+        //Customized Message
+        obj.customizedExceptions();
     }
     //Arithmetic Exception
     private void arithmeticError(){
@@ -76,6 +80,16 @@ public class JExceptions {
             System.out.println(e.getMessage());
         }
     }
+    /*
+    * **************************** Definitions ***********************************
+    * try       --> to maintain code that can fail
+    * catch     --> to maintain exception handling code
+    * finally   --> to maintain clean up code
+    * throw     --> to handover our created exception object to JVM manually
+    * throws    --> to delegate responsibility of exception handling to the caller
+    *
+    *
+    * */
     //Exception Handling - best practice
     private void exceptionBestPractice(){
         try {
@@ -104,5 +118,18 @@ public class JExceptions {
         }*/catch (Exception exception){
             System.out.println("Exception Handling Practice");
         }
+    }
+    public void customizedExceptions(){
+        throw new CustomExceptionClass("Message From Custom Exception Class");
+    }
+}
+//Custom Exception Classes
+class CustomExceptionClass extends RuntimeException{
+    public CustomExceptionClass(String s){
+        super(s);
+    }
+    @Override
+    public String getMessage(){
+        return "Failed Message from Customized Exception Class";
     }
 }
