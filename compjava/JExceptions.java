@@ -125,10 +125,31 @@ public class JExceptions {
             System.out.println("Exception Handling Practice");
         }
     }
+    /*
+    * ********************** Multi Catch Block **********************
+    * Until 1.6V separate catch blocks used to each exception type
+    * From 1.7V onwards we can have multiple exceptions merged in
+    * single catch block (separated by or (|) sign)
+    *
+    * */
+    public void multiCatchBlock(){
+        try {
+            int i = 10 / 0;
+            FileReader reader = new FileReader("some_file.txt");
+            String s = null;
+            System.out.println(s.length());
+        }catch (ArithmeticException | IOException | NullPointerException e){
+            e.getMessage();
+        }
+    }
+
+    //Custom Exceptions
     public void customizedExceptions(){
         throw new CustomExceptionClass("Message From Custom Exception Class");
 
     }
+
+
     /*
     *  ******************************** Top 10 Exceptions *********************************
     *       1.  ArrayIndexOutOfBoundsException          |   Raised automatically by
