@@ -195,6 +195,11 @@ public class JExceptions {
     * In v1.7 onwards, we have option to put resources like buffer reader
     * in try condition and buffer reader will be closed automatically
     * at the end of try block
+    *
+    * Until 1.6V finally / catch block was mandatory with try block
+    * but with 1.7V onward, try block can exist in code (with resources)
+    * alone!
+    *
     * */
 
     public void tryEnhancements() throws IOException {
@@ -215,6 +220,13 @@ public class JExceptions {
         } catch (IOException e) {
             e.getMessage();
         }
+    }
+    //Try block without catch or finally
+    public void onlyTryEnhancementsWithResources() throws IOException {
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader("some_file.txt")))
+            {
+                System.out.println();
+            }
     }
 }
 //Custom Exception Classes
