@@ -131,6 +131,13 @@ public class JExceptions {
     * From 1.7V onwards we can have multiple exceptions merged in
     * single catch block (separated by or (|) sign)
     *
+    * In Multi Catch Block, Exceptions should not have relations for
+    * Either Parent to Child or Child to Parent
+    * Else we will get Compile Time Error!
+    * Example - ArithmeticException is Child and Exception is Parent
+    *           If both will be there in Multi Catch Block, Compile
+    *           Time Error will occur!
+    *
     * */
     public void multiCatchBlock(){
         try {
@@ -146,7 +153,6 @@ public class JExceptions {
     //Custom Exceptions
     public void customizedExceptions(){
         throw new CustomExceptionClass("Message From Custom Exception Class");
-
     }
 
 
