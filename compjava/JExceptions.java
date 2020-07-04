@@ -28,11 +28,15 @@ package com.compjava;
 *
 * */
 
+import java.io.BufferedReader;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.sql.SQLData;
 import java.sql.SQLException;
 import java.sql.SQLInput;
 import java.sql.SQLOutput;
+import java.util.Arrays;
 
 /*
 *
@@ -61,9 +65,11 @@ public class JExceptions {
     public static void main(String[] args) {
         JExceptions obj = new JExceptions();
         ////Arithmetic Exception (Divide by 0)
-        obj.arithmeticError();
+        //obj.arithmeticError();
         //Customized Message
-        obj.customizedExceptions();
+        //obj.customizedExceptions();
+
+        obj.topTenExceptions();
     }
     //Arithmetic Exception
     private void arithmeticError(){
@@ -121,6 +127,94 @@ public class JExceptions {
     }
     public void customizedExceptions(){
         throw new CustomExceptionClass("Message From Custom Exception Class");
+
+    }
+    /*
+    *  ******************************** Top 10 Exceptions *********************************
+    *       1.  ArrayIndexOutOfBoundsException          |   Raised automatically by
+    *       2.  NullPointerException                    |   JVM and hence these are
+    *       3.  ClassCastException                      |   JVM exceptions
+    *       4.  StackOverflowError                      |
+    *       5.  NoClassDefFoundError                    |
+    *       6.  ExceptionInInitializerError             |
+    *       -------------------------------------------------------------------------------
+    *       7.  IllegalArgumentException                |   Raised explicitly by programmer
+    *       8.  NumberFormatException                   |   (or) by API developer. These
+    *       9.  IllegalStateException                   |   are programatic Exceptions
+    *       10  AssertionError                          |
+    *
+    *       IllegalArgumentException: this will be raised when passed argument is not a
+    *           legal argument for the method. Say Thread priority values is passed 15,
+    *           but accepted values for thread priority is between 1 and 10, so
+    *           IllegalArgumentException is raised!
+    *
+    *       NumberFormatException: this is part (child) of IllegalArgumentException. this
+    *           is raised when number formatting failed. Example Integer i = Integer.parseInt("10")
+    *           is valid but if we try to convert ten to integer, NumberFormatException is
+    *           raised --> Integer i = Integer.parseInt("ten")
+    *
+    *       IllegalStateException : suppose we started a thread t (t.start()) and if thread is
+    *           in running state and we try to start again the same thread t. we will get
+    *           IllegalStateException.
+    *
+    *
+    * */
+    private void topTenExceptions(){
+        //1. ArrayIndexOutOfBoundsException
+        int[] arr = new int[5];
+        Arrays.fill(arr, 1);
+        for(int i = 0; i <=arr.length; i++){
+            if(i >= 5){
+                //ArrayIndexOutOfBoundsException will be raised by JVM;
+            }
+        }
+
+        //2. NullPointerException
+        String s = null;
+        //Since s is null if we try to access or operate on string
+        //NullPointerException is raised by JVM
+        System.out.println(s.charAt(0));
+
+        Object o = new Object();
+        //Following code trying to case object (upper/parent) to
+        // String, JVM will raise ClassCastException
+        String s1 = (String)o;
+
+        //ExceptionInInitializerError > it will be raised with static assignments
+        //or static blocks
+
+
+    }
+    /*
+    * ******************** try with Resources ***********************************
+    * Until v1.6 if we were reading file using Buffer reader,
+    * we were using finally block to close the buffer reader,
+    * if not null/closed! it was highly recommended until 1.6
+    * version to close resources which are open
+    *
+    * In v1.7 onwards, we have option to put resources like buffer reader
+    * in try condition and buffer reader will be closed automatically
+    * at the end of try block
+    * */
+
+    public void tryEnhancements() throws IOException {
+        BufferedReader bufferedReader = null;
+        try {
+            bufferedReader = new BufferedReader(new FileReader("some_file.txt"));
+            System.out.println(bufferedReader.read());
+        }catch (IOException e){
+            e.getMessage();
+        }finally {
+            if(bufferedReader != null){
+                bufferedReader.close();
+            }
+        }
+    }
+    public void tryEnhancementsWithResources(){
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader("some_file.txt"))) {
+        } catch (IOException e) {
+            e.getMessage();
+        }
     }
 }
 //Custom Exception Classes
