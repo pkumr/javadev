@@ -1,9 +1,19 @@
 package com.compjava;
-/*
-* @author Parveen Kumar
-* Flow Control
-*
-* */
+/**
+ * @author parveenkumar
+ * Flow Control
+ *  1. Selection Statements
+ *      a) if-else
+ *      b) while
+ *      c) for
+ *      d) foreach
+ *  2. Transfer Statements
+ *      a) break
+ *      b) continue
+ *      c) return
+ *      d) try catch finally
+ *      e)  assert
+ * */
 public class FlowControl {
     /*
     * Selection Statements
