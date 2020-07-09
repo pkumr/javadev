@@ -1,6 +1,7 @@
 package com.compjava;
-/*
-@author : Parveen Kumar
+/**
+ * Arrays
+ * @author : Parveen Kumar
 */
 import java.util.Arrays;
 import java.util.Comparator;
