@@ -1,12 +1,11 @@
 package com.compjava;
 
-/*
-@author : Parveen Kumar
-*/
-
-import java.io.*;
 import java.util.*;
-
+/**
+ * Maps in Java - Basic Operations
+ * @author parveenkumar 
+ *
+ * */
 public class JMaps {
     public static void main(String[] args) {
         JMaps obj = new JMaps();
