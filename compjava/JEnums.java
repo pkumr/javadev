@@ -1,6 +1,9 @@
 package com.compjava;
-//JEnums (Basic Enum)
-//@author : Parveen Kumar
+/**
+ * JEnums (Basic Enum)
+ * @author : Parveen Kumar
+ *
+ */
 
 public enum JEnums {
     A,
