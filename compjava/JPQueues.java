@@ -1,15 +1,16 @@
 package com.compjava;
-
-/*
-@author : Parveen Kumar
-*/
-
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.PriorityQueue;
 
-public class PQueues {
+/**
+ * Java Priority Queues - Basic Operations
+ * @author parveenkumar
+ *
+ * */
+
+public class JPQueues {
     private void maxHeapOneD(int[] arr){
         PriorityQueue<Integer> priorityQueue = new PriorityQueue<>(new Comparator<Integer>() {
             //Default is min heap (Number 1 - Number 2) <-- Increasing Order
@@ -116,7 +117,7 @@ public class PQueues {
     }
 
     public static void main(String[] args) {
-        PQueues obj = new PQueues();
+        JPQueues obj = new JPQueues();
         int[] inMinHeap = {3, 2, 1, 5, 6, 4};
         System.out.println("Input --> 3, 2, 1, 5, 6, 4");
         obj.minHeapOneD(inMinHeap);
