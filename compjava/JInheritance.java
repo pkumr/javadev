@@ -1,16 +1,15 @@
 package com.compjava;
-/*
-* @author : Parveen Kumar
-*
-*  INHERITANCE (IS - A Relation) : Java classes allow single inheritance but interfaces can
-*   extend multiple interfaces
-*
-*  Example :
-*   Java classes allow multilevel inheritance. ie. Class M is parent class
-*   Class N can be child class and extends M and then Class O also extends
-*   class N (N is parent for O)
-*
-*
+/**
+ * Is-A Relation (Inheritance Concepts)
+ * @author : Parveen Kumar
+ *
+ *  INHERITANCE (IS - A Relation) : Java classes allow single inheritance but
+ *  interfaces can extend multiple interfaces
+ *  Example :
+ *   Java classes allow multilevel inheritance. ie. Class M is parent class
+ *   Class N can be child class and extends M and then Class O also extends
+ *   class N (N is parent for O)
+ *
 * */
 
 //Multilevel  Inheritance
