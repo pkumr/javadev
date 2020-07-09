@@ -1,14 +1,14 @@
 package com.compjava;
-/*
-* @author : Parveen Kumar
-* OOPS
-*
-* Three Pillars of OOPS
-*   1.  Encapsulation --> Security
-*   2.  Inheritance --> Reusability
-*   3.  Polymorphism --> Flexibility to Programmer
-*
-* */
+/**
+ *  @author : Parveen Kumar
+ *  OOPS
+ *
+ *  Three Pillars of OOPS
+ *    1.  Encapsulation --> Security
+ *    2.  Inheritance --> Reusability
+ *    3.  Polymorphism --> Flexibility to Programmer
+ *
+ *  */
 
 /*
 * Encapsulation (data/information hiding)
