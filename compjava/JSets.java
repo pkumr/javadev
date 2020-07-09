@@ -1,7 +1,10 @@
 package com.compjava;
 
 import java.util.*;
-
+/**
+ * Java Sets - Basic Operations
+ * @author parveenkumar
+ * */
 public class JSets {
     public static void main(String[] args) {
         JSets obj = new JSets();
