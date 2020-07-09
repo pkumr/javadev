@@ -1,9 +1,12 @@
 package com.compjava;
-/*
-* *********** METHOD OVERLOADING *****************
-* @author : Parveen Kumar
-*
-* */
+/**
+ * *********** METHOD OVERLOADING *****************
+ * @author : Parveen Kumar
+ *
+ * In Overloading, method resolution is always takes care at compile time by compiler. thus
+ * overloading is also called static binding, early binding or compile time polymorphism.
+ * (REFERENCE OBJECT)
+ * */
 public class JOverLoading {
     public static void main(String[] args) {
         MethodOverloading objOne = new MethodOverloading();
