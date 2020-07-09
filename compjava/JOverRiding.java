@@ -1,5 +1,9 @@
 package com.compjava;
-
+/**
+ * Method Overriding in JAVA
+ * @author parveenkumar
+ *
+ * */
 public class JOverRiding {
     static class Parent{
         //SCENARIO #8 (static methods)
