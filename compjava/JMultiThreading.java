@@ -123,6 +123,20 @@ public class JMultiThreading {
             System.out.println("Main Thread (Thread Priority )");
         }
 
+        /*
+        * ********* SynchronizedDemo *******************
+        *
+        * Once one thread start executing the other thread will wait to execute
+        * 
+        * */
+        Display display = new Display();
+        SynchronizedDemo demoR = new SynchronizedDemo(display, "Rock");
+        SynchronizedDemo demoP = new SynchronizedDemo(display, "Paper");
+        SynchronizedDemo demoS = new SynchronizedDemo(display, "Scissor");
+        demoP.start();
+        demoR.start();
+        demoS.start();
+
     }
 }
 //Defining a Thread
@@ -233,5 +247,34 @@ class MyThreadYield extends Thread{
             System.out.println("Yield Child Thread");
             Thread.yield();
         }
+    }
+}
+
+/**
+ * ************** synchronized ***************
+ *
+ * */
+class Display{
+    public synchronized void display(String name){
+        for(int i = 0; i < 5; i++){
+            System.out.print("Display : ");
+            try {
+                Thread.sleep(1000);
+            }catch (InterruptedException e){
+
+            }
+            System.out.println(name);
+        }
+    }
+}
+class SynchronizedDemo extends Thread{
+    Display d;
+    String name;
+    SynchronizedDemo(Display d, String name){
+        this.d = d;
+        this.name = name;
+    }
+    public void run(){
+        d.display(name);
     }
 }
