@@ -1,6 +1,12 @@
 package com.bits;
 
-
+/**
+ *
+ * Binary Operation in Java
+ * @author : parveenkumar
+ *
+ *
+ * */
 
 public class BinarySystem {
 	public static void main(String[] args) {
