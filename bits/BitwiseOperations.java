@@ -1,5 +1,12 @@
 package com.bits;
 
+/**
+ *
+ * Bit Operations in Java
+ * @author parveenkumar
+ *
+ * */
+
 public class BitwiseOperations {
 	public static void main(String[] args) {
 		BitwiseOperations b = new BitwiseOperations();
