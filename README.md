@@ -1,5 +1,3 @@
-# Core Programming
+# Problem Solving in Java
 
-## Algorithms
-## Data Structures
-## Problems
+## Archive - 12/17/2020
